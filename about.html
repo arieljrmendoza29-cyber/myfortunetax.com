@@ -358,7 +358,7 @@
   </div>
   <div class="ftp-main">
    <iframe id="inline-TnH6bccRCNnf3LLCWLKl" data-src="https://links.myfortunetax.com/widget/form/TnH6bccRCNnf3LLCWLKl" title="Website Pop-up Form" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="Website Pop-up Form" data-layout-iframe-id="inline-TnH6bccRCNnf3LLCWLKl" data-form-id="TnH6bccRCNnf3LLCWLKl"></iframe>
-   <button type="button" class="ftp-skip" id="ftp-skip">No thanks, continue browsing</button>
+   <button type="button" class="ftp-skip" id="ftp-skip">Continue browsing</button>
   </div>
  </div>
 </div>
@@ -368,13 +368,15 @@
   if(!box)return;
   function get(){try{return +localStorage.getItem(KEY)||0}catch(e){return 0}}
   function set(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
-  if(Date.now()-get()<DAYS*864e5)return;              /* closed recently: don't bother this visitor again for a week */
+  /* shows on every page load, even after closing or signing up */
   function load(){if(loaded)return;loaded=true;frame.src=frame.getAttribute("data-src");
     var s=document.createElement("script");s.src="https://links.myfortunetax.com/js/form_embed.js";s.async=true;document.body.appendChild(s)}
   function open(){if(shown)return;shown=true;load();last=document.activeElement;box.setAttribute("aria-hidden","false");box.classList.add("ftp-open");
     document.documentElement.style.overflow="hidden";setTimeout(function(){document.getElementById("ftp-x").focus()},60)}
   function close(){box.classList.remove("ftp-open");box.setAttribute("aria-hidden","true");document.documentElement.style.overflow="";set();
     if(last&&last.focus)try{last.focus({preventScroll:true})}catch(e){}}
+  window.addEventListener("message",function(e){try{if(!/links\.myfortunetax\.com$/.test(new URL(e.origin).host))return;
+    var d=typeof e.data==="string"?e.data:JSON.stringify(e.data||"");if(/submit/i.test(d))localStorage.setItem("fta-popup-sent","1")}catch(x){}});
   document.getElementById("ftp-x").addEventListener("click",close);
   document.getElementById("ftp-skip").addEventListener("click",close);
   box.addEventListener("click",function(e){if(e.target===box)close()});
