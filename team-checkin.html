@@ -30,7 +30,7 @@ a{color:var(--emerald)}
 .hero{padding-block:44px 26px}
 .eyebrow{display:block;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text)}
 h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 0;text-wrap:balance}
-h1 em{font-style:italic;color:var(--emerald)}
+h1 em{font-style:italic;color:var(--emerald);display:inline-block}
 .date{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 14px;border-radius:999px;background:var(--gold-tint);color:var(--gold-text);font-weight:700;font-size:14px}
 .date::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
 .greet{margin:16px 0 0;color:var(--muted);max-width:60ch}
@@ -53,6 +53,8 @@ textarea{min-height:110px;resize:vertical}
 .chip input:hover+span{border-color:var(--gold)}
 .chip input:focus-visible+span{box-shadow:0 0 0 4px rgba(201,162,77,.3)}
 .chip input:checked+span{background:var(--emerald);border-color:var(--emerald);color:var(--white)}
+.chip input[type=checkbox]+span::before{content:"";width:14px;height:14px;border:1.5px solid currentColor;border-radius:3px;margin-right:8px;flex:none}
+.chip input[type=checkbox]:checked+span::before{content:"✓";display:grid;place-items:center;font-size:11px;line-height:1;background:var(--white);color:var(--emerald);border-color:var(--white)}
 .note-label{font-size:13px;font-weight:600;color:var(--muted)}
 .err{display:none;font-size:14px;color:var(--red);font-weight:600}
 .field.bad .err{display:block}
@@ -71,10 +73,34 @@ textarea{min-height:110px;resize:vertical}
 .done h2{font-family:var(--serif);font-size:34px;font-weight:600;margin:0 0 8px}
 .foot{padding-block:28px 40px;font-size:13px;color:var(--muted);text-align:center}
 [hidden]{display:none!important}
-@media (prefers-reduced-motion:no-preference){.card{animation:up .5s cubic-bezier(.2,.7,.2,1) both}@keyframes up{from{transform:translateY(10px);opacity:.4}to{transform:none;opacity:1}}}
+
+/* motion, matched to myfortunetax.com */
+@keyframes fta-rise{from{transform:translateY(110%)}}
+@keyframes fta-fadeup{from{opacity:0;transform:translateY(18px)}}
+@keyframes fta-draw{from{transform:scaleX(0)}}
+@keyframes fta-pop{0%{transform:scale(.94)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes fta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,162,77,.55)}50%{box-shadow:0 0 0 6px rgba(201,162,77,0)}}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+h1 .w>span{display:inline-block}
+.rule{transform-origin:left}
+@media (prefers-reduced-motion:no-preference){
+  .anim .eyebrow{animation:fta-fadeup .7s cubic-bezier(.2,.7,.2,1) .05s backwards}
+  .anim h1 .w>span{animation:fta-rise .85s cubic-bezier(.2,.7,.2,1) backwards}
+  .anim .date{animation:fta-fadeup .8s cubic-bezier(.2,.7,.2,1) .6s backwards}
+  .anim .date::before{animation:fta-pulse 2.4s ease-in-out 1.4s 3}
+  .anim .greet{animation:fta-fadeup .8s cubic-bezier(.2,.7,.2,1) .75s backwards}
+  .anim .rule{animation:fta-draw .9s cubic-bezier(.7,0,.2,1) .9s backwards}
+  .anim .card{animation:fta-fadeup .9s cubic-bezier(.2,.7,.2,1) 1s backwards}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .chip input:checked+span{animation:fta-pop .3s ease-out}
+  .done:not([hidden]) .check{animation:fta-pop .5s ease-out}
+  .done:not([hidden]) h2,.done:not([hidden]) p{animation:fta-fadeup .7s cubic-bezier(.2,.7,.2,1) .15s backwards}
+}
+
 </style>
 </head>
-<body>
+<body class="anim">
 <header class="top"><div class="wrap">
   <a href="https://myfortunetax.com" aria-label="Fortune Tax Advisors home"><img src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181dd1d68437cf864fd4.png" alt="Fortune Tax Advisors" width="168" height="44"></a>
   <span>Team only</span>
@@ -143,15 +169,20 @@ var $ = function(id){return document.getElementById(id)};
 function show(msg, kind){var s=$("status");s.textContent=msg;s.className="banner "+(kind||"info");s.hidden=!msg}
 
 function titleHTML(t){
-  var parts=t.trim().split(" ");var last=parts.pop();
-  var h=document.createDocumentFragment();
-  h.appendChild(document.createTextNode(parts.join(" ")+(parts.length?" ":"")));
-  var em=document.createElement("em");em.textContent=last;h.appendChild(em);return h;
+  var words=t.trim().split(/\s+/),h=document.createDocumentFragment();
+  words.forEach(function(w,i){
+    var o=document.createElement("span");o.className="w";
+    var inner=document.createElement(i===words.length-1?"em":"span");inner.textContent=w;
+    inner.style.animationDelay=(.12+i*.1)+"s";
+    o.appendChild(inner);h.appendChild(o);
+    if(i<words.length-1)h.appendChild(document.createTextNode(" "));
+  });
+  return h;
 }
 
 function render(c){
   cfg=c;
-  var t=$("title");t.textContent="";t.appendChild(titleHTML(c.title||"Weekly Team Check-In"));
+  var t=$("title"),tt=c.title||"Weekly Team Check-In";if(t.dataset.t!==tt){t.dataset.t=tt;t.textContent="";t.appendChild(titleHTML(tt))}
   $("date").textContent=c.date||"";$("date").hidden=!c.date;
   $("greet").textContent=c.greeting||"";
   document.title=(c.title||"Weekly Team Check-In")+" | Fortune Tax Advisors";
@@ -170,11 +201,13 @@ function render(c){
       lab.htmlFor=q.id+"-text";
       var ta=document.createElement("textarea");ta.id=q.id+"-text";ta.placeholder="Tell us what you need help with (optional)";ta.maxLength=1000;f.appendChild(ta);
     }else{
-      var chips=document.createElement("div");chips.className="chips";chips.setAttribute("role","radiogroup");chips.setAttribute("aria-label",q.label);
+      var multi=q.type==="Checkbox";
+      if(multi){var hint=document.createElement("span");hint.className="note-label";hint.textContent="Select all that apply";f.insertBefore(hint,null)}
+      var chips=document.createElement("div");chips.className="chips";chips.setAttribute("role",multi?"group":"radiogroup");chips.setAttribute("aria-label",q.label);
       var opts=q.options.slice();if(q.other)opts.push("Other");
       opts.forEach(function(o,k){
         var l=document.createElement("label");l.className="chip";
-        var inp=document.createElement("input");inp.type="radio";inp.name=q.id;inp.value=o;inp.id=q.id+"-"+k;
+        var inp=document.createElement("input");inp.type=multi?"checkbox":"radio";inp.name=q.id;inp.value=o;inp.id=q.id+"-"+k;
         var sp=document.createElement("span");sp.textContent=o;
         l.appendChild(inp);l.appendChild(sp);chips.appendChild(l);
         inp.addEventListener("change",function(){f.classList.remove("bad");updateNote(q.id)});
@@ -188,15 +221,17 @@ function render(c){
     }
     box.appendChild(f);
   });
+  revealFields();
 
   if(!c.open){$("form").hidden=true;show(c.closed||"This check-in is closed.","info")}
   else if(!connected){show("Preview only: answers can't be sent until the Google Sheet is connected.","info")}
   else show("");
 }
 
-function picked(id){var x=document.querySelector('input[name="'+id+'"]:checked');return x?x.value:""}
+function pickedAll(id){return [].map.call(document.querySelectorAll('input[name="'+id+'"]:checked'),function(x){return x.value})}
+function picked(id){return pickedAll(id).join(", ")}
 function updateNote(id){
-  var other=picked(id)==="Other";
+  var other=pickedAll(id).indexOf("Other")>-1;
   $(id+"-notelabel").textContent=other?"Please explain your answer *":"Other / explanation (optional)";
   $(id+"-note").classList.toggle("need",other);
 }
@@ -209,10 +244,10 @@ $("form").addEventListener("submit",function(ev){
   if(!$("name").value){$("f-name").classList.add("bad");ok=false;first=first||$("f-name")}
   cfg.questions.forEach(function(q){
     if(q.type==="Text"){answers[q.id]={text:$(q.id+"-text").value.trim()};return}
-    var ch=picked(q.id),note=$(q.id+"-note").value.trim(),f=$("f-"+q.id);
-    if(q.required&&!ch){$(q.id+"-err").textContent="Please choose an answer.";f.classList.add("bad");ok=false;first=first||f}
-    else if(ch==="Other"&&!note){$(q.id+"-err").textContent="Please explain your \"Other\" answer.";f.classList.add("bad");ok=false;first=first||f}
-    answers[q.id]={choice:ch,note:note};
+    var all=pickedAll(q.id),ch=all.join(", "),note=$(q.id+"-note").value.trim(),f=$("f-"+q.id);
+    if(q.required&&!all.length){$(q.id+"-err").textContent=q.type==="Checkbox"?"Please choose at least one answer.":"Please choose an answer.";f.classList.add("bad");ok=false;first=first||f}
+    else if(all.indexOf("Other")>-1&&!note){$(q.id+"-err").textContent="Please explain your \"Other\" answer.";f.classList.add("bad");ok=false;first=first||f}
+    answers[q.id]={choice:ch,choices:all,note:note};
   });
   if(!ok){first.scrollIntoView({behavior:"smooth",block:"center"});return}
   if(!connected){show("Preview only: this form isn't connected to the Google Sheet yet, so nothing was sent.","error");return}
@@ -230,6 +265,15 @@ $("form").addEventListener("submit",function(ev){
     })
     .finally(function(){btn.disabled=false;btn.textContent="Submit check-in"});
 });
+
+function revealFields(){
+  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var io=new IntersectionObserver(function(es){if(!es.some(function(e){return e.isIntersecting}))return;document.querySelectorAll(".reveal:not(.in)").forEach(function(f){if(f.getBoundingClientRect().top<innerHeight*.95){f.classList.add("in");io.unobserve(f)}})},{rootMargin:"0px 0px -5% 0px"});
+  document.querySelectorAll("#questions .field").forEach(function(f){
+    if(f.getBoundingClientRect().top<innerHeight)return;
+    f.classList.add("reveal");io.observe(f);
+  });
+}
 
 if(connected){
   render(PREVIEW);
