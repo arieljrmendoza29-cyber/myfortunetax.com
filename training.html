@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 1 Tax Training | Fortune Tax Advisors</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#006B48">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --cream:#FBF7EF;--paper:#FFFFFF;--ink:#1D1D1B;--muted:#6B675F;--line:#EADFC9;
+  --emerald:#006B48;--emerald-deep:#00543A;--mint:#E6F2EC;
+  --gold:#C9A24D;--gold-soft:#E8D39A;--gold-text:#8A6A22;--gold-tint:#F7EEDA;
+  --serif:Lora,Georgia,serif;--sans:Poppins,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--cream)}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--emerald)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 40px}
+.sheet{background:var(--cream);border:1.5px solid var(--gold-soft);border-radius:18px;padding:28px clamp(16px,4vw,40px) 30px;position:relative;box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--line)}
+.logo{display:block;margin:0 auto 22px;width:210px;max-width:62%;height:auto}
+/* fade-up animation */
+.rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+
+.hero{background:linear-gradient(135deg,#00754F 0%,var(--emerald) 45%,var(--emerald-deep) 100%);color:#fff;border-radius:16px;padding:clamp(22px,4vw,34px);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,211,154,.22),transparent 70%)}
+.kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:8px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,40px);line-height:1.15;font-weight:700;max-width:560px}
+.hero h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{margin-top:12px;max-width:600px;font-size:15px;color:#E9F3EE}
+.cap{font-size:44px;position:absolute;right:28px;top:50%;transform:translateY(-50%);opacity:.95}
+@media (max-width:640px){.cap{display:none}}
+.pill{display:inline-block;margin-top:16px;background:var(--gold-soft);color:#3F3110;font-weight:600;font-size:13px;padding:6px 14px;border-radius:999px}
+
+.sec{margin-top:30px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-family:var(--serif);color:var(--emerald);font-size:24px;font-weight:700;white-space:nowrap}
+.sec-h .ic{color:var(--gold);font-size:18px}
+.sec-h:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,77,0))}
+.sub{color:var(--muted);font-size:14px;margin-bottom:12px}
+.note{color:var(--muted);font-size:13px;font-style:italic;margin-top:10px}
+
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.goal{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:10px 14px;font-size:14px;transition:transform .2s,box-shadow .2s}
+.goal:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.goal.full{grid-column:1/-1}
+@media (max-width:640px){.goals{grid-template-columns:1fr}}
+
+.nights{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.nights{grid-template-columns:1fr}}
+.night{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.night h3{font-family:var(--serif);color:var(--emerald);font-size:19px}
+.time{display:inline-block;background:var(--emerald);color:#fff;font-weight:600;font-size:13px;border-radius:999px;padding:4px 12px;margin:8px 0}
+.night p{font-size:14px;color:var(--muted)}
+
+.zoom{margin-top:14px;display:flex;align-items:center;gap:16px;border:1.5px dashed var(--gold);border-radius:14px;padding:14px 16px;background:var(--paper);flex-wrap:wrap}
+.zbtn{background:linear-gradient(180deg,#B8913F,#9E7A2C);color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border-radius:999px;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.zbtn:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(158,122,44,.35)}
+.zinfo b{color:var(--emerald);font-size:14px}
+.zinfo a{display:block;font-size:12px;word-break:break-all}
+.copy{margin-left:auto;border:1px solid var(--line);background:var(--cream);border-radius:999px;padding:7px 14px;font:600 12px var(--sans);color:var(--emerald);cursor:pointer}
+.ready{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+@media (max-width:640px){.ready{grid-template-columns:1fr 1fr}}
+.ready div{background:var(--emerald);color:#fff;border-radius:12px;text-align:center;padding:14px 8px;font-weight:600;font-size:13px}
+.ready span{display:block;font-size:20px;margin-bottom:4px}
+
+.cls{display:flex;flex-direction:column;gap:8px}
+.cls-head{display:grid;grid-template-columns:44px 120px 1fr;gap:10px;font-size:11px;letter-spacing:2px;font-weight:600;color:var(--gold-text);padding:0 12px}
+.row{display:grid;grid-template-columns:44px 120px 1fr;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;transition:transform .2s,box-shadow .2s;position:relative}
+.row:hover{transform:translateX(3px);box-shadow:0 6px 16px rgba(0,0,0,.05)}
+.num{width:28px;height:28px;border-radius:50%;background:var(--emerald);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.date{color:var(--emerald);font-weight:700;font-size:14px}
+.title{font-size:14px}
+.tag{display:inline-block;margin-left:8px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 9px;border-radius:999px;vertical-align:1px}
+.t-workshop{background:var(--gold-tint);color:var(--gold-text)}
+.t-lesson{background:var(--mint);color:var(--emerald)}
+.t-exam{background:var(--mint);color:var(--emerald)}
+.t-celebrate{background:var(--gold-tint);color:var(--gold-text)}
+.row.gold{background:linear-gradient(90deg,#FFF9EC,#FBEFD3);border-color:var(--gold-soft)}
+.row.gold .num{background:#A88A4E}
+.row.gold .title{font-weight:700}
+.row.break{background:#F1ECE2;border-style:dashed}
+.row.break .num{background:#CDBFA6}
+.row.break .date,.row.break .title{color:var(--muted);font-style:italic}
+.row.done{opacity:.6}
+.row.next{border:2px solid var(--emerald);box-shadow:0 6px 18px rgba(0,107,72,.12)}
+.badge{display:inline-block;margin-left:8px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 9px;border-radius:999px;background:var(--emerald);color:#fff;vertical-align:1px}
+@media (max-width:640px){
+  .cls-head{display:none}
+  .row{grid-template-columns:36px 1fr;row-gap:2px}
+  .row .title{grid-column:2}
+}
+.after{margin-top:12px;background:var(--emerald);color:#fff;border-radius:12px;padding:12px 16px;text-align:center;font-size:14px}
+.after b{color:var(--gold-soft)}
+
+.events{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.events{grid-template-columns:1fr}}
+.ev{background:var(--paper);border:1.5px solid var(--gold-soft);border-radius:14px;padding:14px 16px}
+.ev h3{font-family:var(--serif);color:var(--emerald);font-size:18px}
+.when{display:inline-block;background:var(--gold-soft);color:#3F3110;font-weight:600;font-size:12px;border-radius:999px;padding:3px 11px;margin:8px 0}
+.ev p{font-size:13px;color:var(--muted)}
+
+.close{text-align:center;margin-top:26px}
+.close p{font-family:var(--serif);font-style:italic;color:var(--emerald);font-size:20px}
+.close small{display:block;margin-top:4px;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--gold-text)}
+.foot{text-align:center;margin-top:22px;font-size:11px;letter-spacing:2.5px;color:var(--gold-text)}
+.updated{text-align:center;font-size:11px;color:var(--muted);margin-top:6px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="sheet">
+  <img class="logo rise" src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181dd1d68437cf864fd4.png" alt="Fortune Tax Advisors – Where Strategy Builds Wealth">
+
+  <section class="hero rise" style="animation-delay:.08s">
+    <div class="kicker" id="kicker"></div>
+    <h1 id="heading"></h1>
+    <p id="intro"></p>
+    <span class="pill" id="pill"></span>
+    <div class="cap" aria-hidden="true">🎓</div>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.16s">
+    <div class="sec-h"><span class="ic">★</span><h2>Our goals</h2></div>
+    <p class="sub" id="goalsIntro"></p>
+    <div class="goals" id="goals"></div>
+    <p class="note" id="goalsNote"></p>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.24s">
+    <div class="sec-h"><span class="ic">💻</span><h2>When we meet</h2></div>
+    <div class="nights" id="nights"></div>
+    <div class="zoom">
+      <a class="zbtn" id="zbtn" target="_blank" rel="noopener">Join Zoom</a>
+      <div class="zinfo"><b id="zoomNote"></b><a id="zlink" target="_blank" rel="noopener"></a></div>
+      <button class="copy" id="copy" type="button">Copy link</button>
+    </div>
+    <div class="ready"><div><span>📹</span>Camera on</div><div><span>💻</span>Laptop ready</div><div><span>📝</span>Notebook out</div><div><span>🔗</span>Same Zoom link</div></div>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.32s">
+    <div class="sec-h"><span class="ic">📚</span><h2>Class schedule</h2></div>
+    <div class="cls-head"><span>#</span><span>DATE</span><span>CLASS</span></div>
+    <div class="cls" id="classes"></div>
+    <div class="after" id="after"></div>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.4s">
+    <div class="sec-h"><span class="ic">★</span><h2>Team events</h2></div>
+    <div class="events" id="events"></div>
+  </section>
+
+  <div class="close"><p id="closing"></p><small>THE FORTUNE TAX ADVISORS TEAM</small></div>
+  <div class="foot">FORTUNE TAX ADVISORS · WHERE STRATEGY BUILDS WEALTH</div>
+  <div class="updated" id="updated"></div>
+ </div>
+</div>
+<div class="toast" id="toast">Zoom link copied</div>
+
+<script>
+/* The schedule is read from the "Training Info", "Training Classes" and "Training Events"
+   tabs of the FTA Team Check-In Google Sheet. Edit the sheet and this page updates.
+   If the sheet can't be reached, the built-in schedule below is shown. */
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyeGlib9vO0MVLkxg_7975FxzE15DoEuREo9Ehct5cbveEFx9ZNVsNrZpZOKjWcvQQevA/exec";
+
+var DEFAULT = {
+  info:{
+    "Kicker":"Level 1 Tax Training",
+    "Heading":"Welcome to Level 1, *team!*",
+    "Intro":"This is where you go from knowing nothing about taxes to filing basic W-2 and self-employed returns, running your client business, and marketing it. Let's get it!",
+    "Pill":"12 classes of grind · Nov 8 – Dec 20",
+    "Goals intro":"By the end of Level 1, you'll be able to:",
+    "Goals":"Understand due diligence and the IRS rules for paid preparers | Prepare and file basic W-2 and self-employed (Schedule C) returns in our software | Talk about taxes with confidence and explain them in plain words | Promote your tax services the right way | Find every credit and deduction a client legally qualifies for",
+    "Goals note":"Everything we teach uses tax year 2026 numbers, for the returns we'll file in 2027.",
+    "Thursday title":"Thursday · Tax + Marketing Night",
+    "Thursday time":"8:30 – 9:30 PM EST",
+    "Thursday details":"Learn one tax topic and one marketing skill.",
+    "Sunday title":"Sunday · Workshop Night",
+    "Sunday time":"6:00 – 8:00 PM EST",
+    "Sunday details":"Practice hands-on, take a quick test, and set your posting goal.",
+    "Zoom link":"https://us06web.zoom.us/j/89300671172?pwd=9MZJSunTsJJK9R6SI13gPN2tlLAOX4.1",
+    "Zoom note":"Same link every class. It never changes, so save it!",
+    "Year":"2026",
+    "After note":"After *December 20*, we're off for the holidays and focused on promoting!",
+    "Closing":"Show up, stay ready, and let's make this our biggest tax season yet!"
+  },
+  classes:[
+    ["1","Sun Nov 8","Orientation: IRS background, PTIN, due diligence","Workshop"],
+    ["2","Thu Nov 12","Filing statuses and dependents","Lesson"],
+    ["3","Sun Nov 15","Form 8867, W-2s, and client intake","Workshop"],
+    ["4","Thu Nov 19","Self-employment and Schedule C","Lesson"],
+    ["5","Sun Nov 22","Software day 1: W-2 returns","Workshop"],
+    ["–","Thu Nov 26","No class. Happy Thanksgiving!","No class"],
+    ["6","Sun Nov 29","Software day 2: Schedule C returns","Workshop"],
+    ["7","Thu Dec 3","Credits and Michigan returns","Lesson"],
+    ["8","Sun Dec 6","Full return, e-file, and refunds","Workshop"],
+    ["9","Thu Dec 10","Pricing, contracts, and ethics","Lesson"],
+    ["10","Sun Dec 13","TaxNitro, bookkeeping, and refund status","Workshop"],
+    ["11","Thu Dec 17","Final exam","Exam"],
+    ["12","Sun Dec 20","Graduation and tax season kickoff!","Celebrate"]
+  ],
+  events:[
+    ["Community event","TBD","Details coming soon. Stay tuned!"],
+    ["Team photo shoot","TBD","Details coming soon. Stay tuned!"]
+  ]
+};
+
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+/* *text* in the sheet becomes highlighted text */
+function rich(s){return esc(s).replace(/\*([^*]+)\*/g,"<em>$1</em>")}
+function richB(s){return esc(s).replace(/\*([^*]+)\*/g,"<b>$1</b>")}
+function safeUrl(u){return /^https:\/\//i.test(u||"")?u:"#"}
+
+var MONTHS={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+function parseDate(txt,year){
+  var m=String(txt).toLowerCase().match(/(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})/);
+  if(!m) return null;
+  var y=parseInt(year,10)||new Date().getFullYear();
+  if(MONTHS[m[1]]<6 && y) y=y+1; /* Jan–Jun dates belong to the next year */
+  return new Date(y,MONTHS[m[1]],parseInt(m[2],10));
+}
+function todayET(){
+  var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date());
+  var o={};p.forEach(function(x){o[x.type]=x.value});
+  return new Date(+o.year,+o.month-1,+o.day);
+}
+
+function render(d){
+  var I=d.info||{};
+  $("kicker").textContent=I["Kicker"]||"";
+  $("heading").innerHTML=rich(I["Heading"]||"");
+  $("intro").textContent=I["Intro"]||"";
+  $("pill").textContent=I["Pill"]||"";
+  $("pill").style.display=I["Pill"]?"":"none";
+  $("goalsIntro").textContent=I["Goals intro"]||"";
+  var goals=String(I["Goals"]||"").split("|").map(function(s){return s.trim()}).filter(String);
+  $("goals").innerHTML=goals.map(function(g,i){return '<div class="goal'+(goals.length%2&&i===goals.length-1?' full':'')+'">'+esc(g)+'</div>'}).join("");
+  $("goalsNote").textContent=I["Goals note"]||"";
+  $("nights").innerHTML=["Thursday","Sunday"].map(function(k){
+    if(!I[k+" title"]) return "";
+    return '<div class="night"><h3>'+esc(I[k+" title"])+'</h3><span class="time">'+esc(I[k+" time"])+'</span><p>'+esc(I[k+" details"])+'</p></div>';
+  }).join("");
+  var z=safeUrl(I["Zoom link"]);
+  $("zbtn").href=z;$("zlink").href=z;$("zlink").textContent=String(I["Zoom link"]||"").replace(/^https:\/\//,"");
+  $("zoomNote").textContent=I["Zoom note"]||"";
+  $("copy").onclick=function(){
+    (navigator.clipboard?navigator.clipboard.writeText(I["Zoom link"]||""):Promise.reject()).then(function(){
+      $("toast").classList.add("on");setTimeout(function(){$("toast").classList.remove("on")},1600);
+    }).catch(function(){window.prompt("Copy the Zoom link:",I["Zoom link"]||"")});
+  };
+
+  var today=todayET(),nextFound=false;
+  $("classes").innerHTML=(d.classes||[]).map(function(c){
+    var num=c[0],date=c[1],title=c[2],type=String(c[3]||"").trim(),t=type.toLowerCase();
+    var isBreak=/no class|break|off/.test(t);
+    var cls="row"+(isBreak?" break":"")+(/exam|celebrat|graduat/.test(t)?" gold":"");
+    var dt=parseDate(date,I["Year"]),badge="";
+    if(dt && !isBreak){
+      if(dt<today) cls+=" done";
+      else if(!nextFound){nextFound=true;cls+=" next";badge='<span class="badge">'+(+dt===+today?"Today":"Up next")+'</span>';}
+    }
+    var tag=isBreak||!type?"":'<span class="tag t-'+(t.split(/\s/)[0].replace(/[^a-z]/g,"")||"lesson")+'">'+esc(type)+'</span>';
+    return '<div class="'+cls+'"><span class="num">'+esc(num||"–")+'</span><span class="date">'+esc(date)+'</span><span class="title">'+esc(title)+tag+badge+'</span></div>';
+  }).join("");
+  $("after").innerHTML=richB(I["After note"]||"");
+  $("after").style.display=I["After note"]?"":"none";
+  $("events").innerHTML=(d.events||[]).filter(function(e){return e[0]}).map(function(e){
+    return '<div class="ev"><h3>'+esc(e[0])+'</h3><span class="when">Date &amp; time: '+esc(e[1]||"TBD")+'</span><p>'+esc(e[2]||"")+'</p></div>';
+  }).join("");
+  $("closing").textContent=I["Closing"]||"";
+}
+
+render(DEFAULT);
+fetch(SCRIPT_URL+"?form=training").then(function(r){return r.json()}).then(function(d){
+  if(d && d.classes && d.classes.length){render(d);$("updated").textContent="Latest schedule loaded"}
+}).catch(function(){});
+</script>
+</body>
+</html>
