@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Level 1 Tax Training | Fortune Tax Advisors</title>
+<title>FTA Level 1 Training Schedule</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#006B48">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -111,6 +111,29 @@ a{color:var(--emerald)}
 .close small{display:block;margin-top:4px;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--gold-text)}
 .foot{text-align:center;margin-top:22px;font-size:11px;letter-spacing:2.5px;color:var(--gold-text)}
 .updated{text-align:center;font-size:11px;color:var(--muted);margin-top:6px}
+.dl{display:inline-block;margin-top:14px;background:#fff;color:var(--emerald);font-weight:600;font-size:13px;text-decoration:none;padding:8px 16px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s}
+.dl:hover{transform:translateY(-1px)}
+@page{size:letter;margin:12mm}
+@media print{
+  html,body{background:#fff}
+  .sheet{zoom:.82}
+  .sec{margin-top:18px}
+  .cls{gap:5px}
+  .row{padding:7px 12px}
+  .hero{padding:22px 26px}
+  .close{margin-top:14px}
+  .wrap{max-width:none;padding:0}
+  .sheet{box-shadow:none;border:none;padding:0}
+  .rise{opacity:1!important;transform:none!important;animation:none!important}
+  .dl,.copy,.toast,.updated,.cap{display:none!important}
+  .hero,.ready div,.after,.num,.time,.row.next{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .row,.goal,.night,.ev,.zoom{break-inside:avoid}
+  .row.done{opacity:1}
+  .badge{display:none}
+  .row.next{border:1px solid var(--line);box-shadow:none}
+  .sec:nth-of-type(4){break-before:page}
+}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.on{opacity:1}
 </style>
@@ -125,6 +148,7 @@ a{color:var(--emerald)}
     <h1 id="heading"></h1>
     <p id="intro"></p>
     <span class="pill" id="pill"></span>
+    <div><a class="dl" id="dl" href="#" role="button">⬇ Download PDF</a></div>
     <div class="cap" aria-hidden="true">🎓</div>
   </section>
 
@@ -277,6 +301,10 @@ function render(d){
     return '<div class="ev"><h3>'+esc(e[0])+'</h3><span class="when">Date &amp; time: '+esc(e[1]||"TBD")+'</span><p>'+esc(e[2]||"")+'</p></div>';
   }).join("");
   $("closing").textContent=I["Closing"]||"";
+  var pdf=I["PDF link"]; var dl=$("dl");
+  if(/^https:\/\//i.test(pdf||"")){dl.href=pdf;dl.target="_blank";dl.rel="noopener";dl.onclick=null;}
+  else{dl.removeAttribute("target");dl.href="#";dl.onclick=function(e){e.preventDefault();window.print();};}
+
 }
 
 render(DEFAULT);
