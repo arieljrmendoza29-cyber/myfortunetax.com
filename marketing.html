@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FTA Marketing Toolkit</title>
+<meta name="description" content="Marketing tips, tools and content ideas for the Fortune Tax Advisors team.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#006B48">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --cream:#FBF7EF;--paper:#FFFFFF;--ink:#1D1D1B;--muted:#6B675F;--line:#EADFC9;
+  --emerald:#006B48;--emerald-deep:#00543A;--mint:#E6F2EC;
+  --gold:#C9A24D;--gold-soft:#E8D39A;--gold-text:#8A6A22;--gold-tint:#F7EEDA;
+  --serif:Lora,Georgia,serif;--sans:Poppins,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--cream)}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--emerald)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 40px}
+.sheet{background:var(--cream);border:1.5px solid var(--gold-soft);border-radius:18px;padding:28px clamp(16px,4vw,40px) 30px;box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--line)}
+.logo{display:block;margin:0 auto 22px;width:210px;max-width:62%;height:auto}
+.rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+
+.hero{background:linear-gradient(135deg,#00754F 0%,var(--emerald) 45%,var(--emerald-deep) 100%);color:#fff;border-radius:16px;padding:clamp(22px,4vw,34px);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,211,154,.22),transparent 70%)}
+.kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:8px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,40px);line-height:1.15;font-weight:700;max-width:560px}
+.hero h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{margin-top:12px;max-width:620px;font-size:15px;color:#E9F3EE}
+.cap{font-size:44px;position:absolute;right:28px;top:50%;transform:translateY(-50%)}
+@media (max-width:640px){.cap{display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips a{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);transition:background .2s}
+.chips a:hover{background:rgba(255,255,255,.26)}
+
+.sec{margin-top:30px;scroll-margin-top:16px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-family:var(--serif);color:var(--emerald);font-size:24px;font-weight:700}
+.sec-h .ic{font-size:20px}
+.sec-h:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,77,0))}
+.sub{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.tip{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:11px 14px;font-size:14px;transition:transform .2s,box-shadow .2s}
+.tip:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.tip b{color:var(--emerald)}
+
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tool{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.tool h3{font-family:var(--serif);color:var(--emerald);font-size:18px;display:flex;align-items:center;gap:8px}
+.tool p{font-size:13.5px;color:var(--muted);flex:1}
+.tool .fav{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--gold-tint);color:var(--gold-text);padding:2px 8px;border-radius:999px}
+.tool a.go{align-self:flex-start;font-size:13px;font-weight:600;text-decoration:none;color:var(--emerald);border-bottom:1.5px solid var(--gold)}
+
+.feature{background:var(--paper);border:1.5px solid var(--gold-soft);border-radius:16px;padding:18px 20px}
+.feature h3{font-family:var(--serif);color:var(--emerald);font-size:20px}
+.feature p{font-size:14px;margin-top:6px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;font-size:14px}
+.steps li:before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--emerald);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.note{margin-top:12px;background:var(--gold-tint);border-radius:10px;padding:10px 14px;font-size:13.5px;color:#4A3A12}
+.btn{display:inline-block;margin-top:12px;background:linear-gradient(180deg,#B8913F,#9E7A2C);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 20px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(158,122,44,.35)}
+
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.idea{background:var(--emerald);color:#fff;border-radius:12px;padding:14px 16px;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+.idea span{font-size:20px;line-height:1}
+
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.goals{grid-template-columns:1fr 1fr}}
+.goal{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.goal b{display:block;font-family:var(--serif);color:var(--emerald);font-size:22px}
+.goal small{font-size:12.5px;color:var(--muted)}
+.list{list-style:none;padding:0;margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:640px){.list{grid-template-columns:1fr}}
+.list li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;display:flex;gap:8px}
+.list li:before{content:"✓";color:var(--gold);font-weight:700}
+
+.rules{background:#FFF;border:1.5px solid #E7C9C3;border-radius:14px;padding:14px 18px}
+.rules h3{font-family:var(--serif);color:#8A2E22;font-size:18px}
+.rules ul{margin:8px 0 0;padding-left:18px;font-size:14px}
+.rules li{margin:3px 0}
+
+.quote{margin-top:26px;text-align:center;background:var(--emerald);color:#fff;border-radius:16px;padding:22px 18px}
+.quote p{font-family:var(--serif);font-size:clamp(18px,3vw,22px);line-height:1.4}
+.quote p b{color:var(--gold-soft)}
+.close{text-align:center;margin-top:22px}
+.close p{font-family:var(--serif);font-style:italic;color:var(--emerald);font-size:19px}
+.close small{display:block;margin-top:4px;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--gold-text)}
+.foot{text-align:center;margin-top:20px;font-size:11px;letter-spacing:2.5px;color:var(--gold-text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="sheet">
+  <img class="logo rise" src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181dd1d68437cf864fd4.png" alt="Fortune Tax Advisors – Where Strategy Builds Wealth" width="210" height="76">
+
+  <section class="hero rise" style="animation-delay:.08s">
+    <div class="kicker">FTA Marketing Toolkit</div>
+    <h1>Let's talk <em>marketing!</em></h1>
+    <p>Tips, tools and resources to help you elevate your content, build your personal brand and start attracting more tax clients this season.</p>
+    <nav class="chips" aria-label="Jump to section">
+      <a href="#photos">📸 Photos &amp; videos</a>
+      <a href="#apps">🎬 Apps</a>
+      <a href="#ai">🤖 AI videos</a>
+      <a href="#print">🪪 Cards &amp; flyers</a>
+      <a href="#post">📲 What to post</a>
+      <a href="#consistency">🚀 Consistency</a>
+    </nav>
+    <div class="cap" aria-hidden="true">📣</div>
+  </section>
+
+  <section class="sec rise" id="photos" style="animation-delay:.14s">
+    <div class="sec-h"><span class="ic">📸</span><h2>Photos &amp; videos</h2></div>
+    <div class="grid">
+      <div class="tip"><b>Invest in a ring light.</b> Good lighting makes a huge difference.</div>
+      <div class="tip"><b>Your phone is powerful.</b> Search TikTok or YouTube for the best camera settings for your phone model.</div>
+      <div class="tip"><b>Keep it clean.</b> Clean background, steady camera, clear video.</div>
+      <div class="tip"><b>Be yourself!</b> People connect with real personalities, not just professional pictures.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="apps" style="animation-delay:.2s">
+    <div class="sec-h"><span class="ic">🎬</span><h2>Content &amp; editing apps</h2></div>
+    <div class="tools">
+      <div class="tool"><h3>CapCut</h3><p>Edit videos, add transitions and create reels.</p><a class="go" href="https://www.capcut.com" target="_blank" rel="noopener">Open CapCut →</a></div>
+      <div class="tool"><h3>Captions</h3><p>Add professional subtitles and make your talking videos more engaging.</p><a class="go" href="https://www.captions.ai" target="_blank" rel="noopener">Open Captions →</a></div>
+      <div class="tool"><h3>AirBrush</h3><p>Touch up your photos while keeping them natural.</p><a class="go" href="https://airbrush.com" target="_blank" rel="noopener">Open AirBrush →</a></div>
+      <div class="tool"><h3>Edits <span class="fav">Samara's favorite</span></h3><p>Instagram's editing app. Edit reels and use the teleprompter when recording speaking videos. Find it in the App Store or Google Play.</p></div>
+      <div class="tool"><h3>Canva</h3><p>Create flyers, social media posts, business cards and other marketing materials.</p><a class="go" href="https://www.canva.com" target="_blank" rel="noopener">Open Canva →</a></div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="ai" style="animation-delay:.26s">
+    <div class="sec-h"><span class="ic">🤖</span><h2>AI content creation</h2></div>
+    <div class="feature">
+      <h3>Higgsfield: AI marketing videos</h3>
+      <p>Create AI marketing videos with Higgsfield. There's a step-by-step tutorial inside <b>Tax Preparer Academy on Skool</b>:</p>
+      <ol class="steps">
+        <li>Log into Skool → Tax Preparer Academy.</li>
+        <li>Go to General Discussion and scroll back through the posts and announcements.</li>
+        <li>Find the post by Kenisha Johnson, dated September 20.</li>
+        <li>Watch “Create AI Videos Using HiggsField Credits” (5 min 38 sec).</li>
+      </ol>
+      <div class="note">💡 Watch the tutorial <b>before</b> buying credits or a subscription. Higgsfield has different plans and credit options depending on the features you need.</div>
+      <a class="btn" href="https://higgsfield.ai" target="_blank" rel="noopener">Visit higgsfield.ai</a>
+    </div>
+  </section>
+
+  <section class="sec rise" id="print" style="animation-delay:.32s">
+    <div class="sec-h"><span class="ic">🪪</span><h2>Business cards &amp; flyers</h2></div>
+    <div class="grid">
+      <div class="tip"><b>Design:</b> Canva, ChatGPT or Claude can help you brainstorm and create marketing materials.</div>
+      <div class="tip"><b>Printing:</b> <a href="https://www.vistaprint.com" target="_blank" rel="noopener">Vistaprint</a>, <a href="https://www.canva.com/print/" target="_blank" rel="noopener">Canva</a> or <a href="https://allprocolor.com" target="_blank" rel="noopener">All Pro Color</a>.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="post" style="animation-delay:.38s">
+    <div class="sec-h"><span class="ic">📲</span><h2>What should you post?</h2></div>
+    <p class="sub">Don't just post “I'm doing taxes!” Give people a reason to trust <b>you</b>.</p>
+    <div class="ideas">
+      <div class="idea"><span>👋</span>Introduce yourself as a Fortune Tax Advisors tax preparer.</div>
+      <div class="idea"><span>📚</span>Share educational tax tips and common mistakes.</div>
+      <div class="idea"><span>😂</span>Create relatable videos about everyday financial situations.</div>
+      <div class="idea"><span>🎯</span>Explain who you help: W-2 employees, self-employed, business owners and more.</div>
+      <div class="idea"><span>🎬</span>Share behind-the-scenes content of your training and tax season prep.</div>
+      <div class="idea"><span>💼</span>Talk about our services and how clients can get started.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="consistency" style="animation-delay:.44s">
+    <div class="sec-h"><span class="ic">🚀</span><h2>Consistency is key</h2></div>
+    <div class="goals">
+      <div class="goal"><b>4–5×</b><small>posts per week</small></div>
+      <div class="goal"><b>Daily</b><small>show up on your stories</small></div>
+      <div class="goal"><b>Now</b><small>start building your client list, don't wait for January</small></div>
+    </div>
+    <ul class="list">
+      <li>Engage with potential clients and your local community.</li>
+      <li>Share your intake link with a clear call to action.</li>
+      <li>Respond to comments and messages.</li>
+      <li>Support each other's content: like, comment and share.</li>
+    </ul>
+    <div class="note">🔗 <b>Your intake link:</b> share <a href="https://links.myfortunetax.com/widget/form/xqFUFSutcMqe2VJlpqVB" target="_blank" rel="noopener">our Become a Client form</a>, or ask Ariel for your personal booking link and QR code.</div>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.5s">
+    <div class="rules">
+      <h3>⚠️ Always remember</h3>
+      <ul>
+        <li>Make sure your tax information is accurate.</li>
+        <li>Never guarantee refunds.</li>
+        <li>Protect client information.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="quote rise" style="animation-delay:.56s">
+    <p>Consistency builds <b>visibility</b>. Visibility builds <b>trust</b>. And trust brings <b>clients!</b> 💰</p>
+  </div>
+
+  <div class="close">
+    <p>Be creative, be authentic, and let your personality shine!</p>
+    <small>QUESTIONS? REACH OUT ANYTIME · THE FTA TEAM</small>
+  </div>
+  <div class="foot">FORTUNE TAX ADVISORS · WHERE STRATEGY BUILDS WEALTH</div>
+ </div>
+</div>
+</body>
+</html>
