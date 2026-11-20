@@ -7,7 +7,7 @@
 <meta name="description" content="Meet the Fortune Tax Advisors tax strategists. See when each preparer is available and book an appointment with the one you want.">
 <meta name="author" content="Fortune Tax Advisors">
 <link rel="canonical" href="https://myfortunetax.com/team">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#0A0A0A">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -34,9 +34,233 @@
 .fta-header-cta .fta-btn{white-space:nowrap}
 
 </style>
+<style id="ftx-theme">
+.ftx{
+  --em:#006B43;--em2:#00834E;--em-d:#003D27;
+  --gold:#A58A5B;--gold2:#EACD91;--gold-t:#8A6F3E;--gold-l:#D9BC82;
+  --black:#0A0A0A;--ivory:#FAF6EC;--white:#FFFFFF;
+  --ink:#141414;--mut:#55534E;--line:#E4D9C2;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,"Helvetica Neue",Arial,sans-serif;
+  --wrap:1180px;--pad:clamp(20px,5vw,48px)}
+.ftx .x-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.ftx .x-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 34px;font:600 13.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:transform .25s,box-shadow .25s,background .25s,color .25s;white-space:nowrap}
+.ftx .x-btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--black)}
+.ftx .x-btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(165,138,91,.35)}
+.ftx .x-btn-line{border-color:var(--gold);color:#fff}
+.ftx .x-btn-line:hover{background:rgba(234,205,145,.1)}
+.ftx .x-nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.97);border-bottom:1px solid rgba(165,138,91,.28)}
+.ftx .x-nav .x-wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.ftx .x-brand img{height:46px;width:auto}
+.ftx .x-menu{display:flex;align-items:center;gap:clamp(18px,2.4vw,38px)}
+.ftx .x-menu>a,.ftx .x-dd>button{font:500 12.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;background:none;border:0;padding:10px 0;cursor:pointer;position:relative}
+.ftx .x-menu>a::after,.ftx .x-dd>button::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--gold2);transition:right .3s}
+.ftx .x-menu>a:hover::after,.ftx .x-dd:hover>button::after,.ftx .x-dd.x-open>button::after{right:0}
+.ftx .x-dd{position:relative}
+.ftx .x-dd-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);min-width:250px;background:#111;border:1px solid rgba(165,138,91,.4);padding:10px;opacity:0;visibility:hidden;transition:.25s}
+.ftx .x-dd:hover .x-dd-panel,.ftx .x-dd.x-open .x-dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.ftx .x-dd-panel a{display:block;padding:11px 14px;font-size:14px;color:rgba(255,255,255,.85);text-decoration:none;letter-spacing:.02em}
+.ftx .x-dd-panel a:hover{color:var(--gold2);background:rgba(234,205,145,.06)}
+.ftx .x-nav .x-btn{min-height:48px;padding:0 28px;font-size:12.5px}
+.ftx .x-burger{display:none;width:48px;height:48px;border:1px solid rgba(165,138,91,.5);background:none;color:#fff;cursor:pointer}
+.ftx .x-burger span{display:block;width:20px;height:1px;background:currentColor;margin:5px auto;transition:.3s}
+.ftx .x-mob{display:none}
+.ftx .x-foot{background:#050505;color:rgba(255,255,255,.72);padding:90px 0 40px;font-size:15px}
+.ftx .x-ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px}
+.ftx .x-foot img{height:48px;width:auto;margin-bottom:18px}
+.ftx .x-foot h4{margin:0 0 20px;font:500 12px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l)}
+.ftx .x-foot a{display:block;text-decoration:none;color:rgba(255,255,255,.78);margin-bottom:11px}
+.ftx .x-foot a:hover{color:var(--gold2)}
+.ftx .x-ft-bot{margin-top:70px;padding-top:28px;border-top:1px solid rgba(165,138,91,.3);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px;color:rgba(255,255,255,.55)}
+.ftx .x-ft-bot a{display:inline;margin:0}
+.ftx{--sun-core:#FBE9BE;--hill-far:#0E4A31;--hill-far2:#06231A;--hill-near:#07120C;--hill-near2:#0A0A0A}
+.ftx{--ease-b:cubic-bezier(.32,.72,0,1)}
+.ftx{overflow-x:clip}
+.ftx{--bounce:cubic-bezier(.34,1.56,.64,1)}
+@supports (transition-timing-function:linear(0,1)){.ftx{--bounce:linear(0,.0833 5.6%,.2603 11.1%,.4566 16.7%,.6331 22.2%,.7737 27.8%,.8759 33.3%,.9442 38.9%,.9858 44.4%,1.0081 50%,1.0178 55.6%,1.0199 61.1%,1.018 66.7%,1.0143 72.2%,1.0104 77.8%,1.007 83.3%,1.0043 88.9%,1.0023 94.4%,1 100%)}
+}
+.ftx .x-nav{transition:background .35s,border-color .35s}
+.ftx .x-isl-mid{display:grid;grid-template-columns:1fr;min-width:0}
+.ftx .x-isl-mid>.x-menu{min-width:0}
+.ftx .x-nav.x-island{background:transparent;border-bottom-color:transparent;height:84px;pointer-events:none}
+.ftx .x-nav.x-island .x-wrap{pointer-events:auto;width:max-content;max-width:calc(100% - 32px);height:62px;margin:11px auto 0;padding:0 7px 0 24px;gap:18px;
+  background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid rgba(165,138,91,.5);border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.3);animation:islIn .7s var(--bounce) both}
+@keyframes islIn{from{opacity:0;transform:translateY(-14px) scale(.9)}to{opacity:1;transform:none}}
+.ftx .x-nav.x-island .x-brand img{height:34px}
+.ftx .x-nav.x-island .x-btn{min-height:46px;padding:0 24px;border-radius:999px}
+.ftx .x-nav.x-island .x-isl-mid{grid-template-columns:0fr;transition:grid-template-columns .7s var(--bounce)}
+.ftx .x-nav.x-island .x-isl-mid>.x-menu{overflow-x:clip;opacity:0;transition:opacity .2s ease}
+.ftx .x-nav.x-island.x-open .x-isl-mid{grid-template-columns:1fr}
+.ftx .x-nav.x-island.x-open .x-isl-mid>.x-menu{opacity:1;transition:opacity .3s ease .18s}
+.ftx .x-nav.x-island .x-menu>a,.ftx .x-nav.x-island .x-dd>button{white-space:nowrap}
+.ftx .x-nav.x-island .x-dd-panel{top:calc(100% + 20px)}
+@media (max-width:1080px){.ftx .x-isl-mid{display:none}
+.ftx .x-nav.x-island .x-btn{display:inline-flex;min-height:40px;padding:0 16px;font-size:11px}
+.ftx .x-nav.x-island .x-wrap{padding:0 6px 0 18px;gap:12px}
+.ftx .x-nav.x-island .x-burger{width:44px;height:44px;border-radius:50%}
+}
+@media (max-width:640px){.ftx .x-nav.x-island{height:72px}
+.ftx .x-nav.x-island .x-wrap{height:56px;margin-top:8px}
+.ftx .x-nav.x-island .x-brand img{height:28px}
+}
+@media (prefers-reduced-motion:reduce){.ftx .x-nav.x-island .x-wrap{animation:none}
+}
+.ftx{--spring:cubic-bezier(.22,1,.36,1);--card-w:min(380px,78vw)}
+@supports (transition-timing-function:linear(0,1)){.ftx{--spring:linear(0,.0941 5.6%,.2736 11.1%,.4548 16.7%,.6076 22.2%,.7255 27.8%,.8119 33.3%,.8732 38.9%,.9156 44.4%,.9444 50%,.9636 55.6%,.9764 61.1%,.9848 66.7%,.9902 72.2%,.9938 77.8%,.996 83.3%,.9975 88.9%,.9984 94.4%,1 100%)}
+}
+@media (max-width:1080px){.ftx .x-menu{display:none}
+.ftx .x-burger{display:block}
+.ftx .x-nav .x-btn{display:none}
+.ftx .x-mob{display:block;position:fixed;inset:84px 0 0;background:#0A0A0A;padding:24px var(--pad) 40px;overflow:auto;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.3s;z-index:49}
+.ftx .x-mob.x-open{opacity:1;visibility:visible;transform:none}
+.ftx .x-mob a{display:block;padding:15px 0;border-bottom:1px solid rgba(165,138,91,.22);color:#fff;text-decoration:none;font:500 22px/1.2 var(--serif)}
+.ftx .x-mob small{display:block;margin:26px 0 4px;font:500 11px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l)}
+.ftx .x-mob a.x-btn{display:flex;margin-top:30px;width:100%;border-bottom:0;font:600 13px/1 var(--sans);letter-spacing:.16em;color:var(--black)}
+.ftx .x-burger.x-x span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.ftx .x-burger.x-x span:nth-child(2){opacity:0}
+.ftx .x-burger.x-x span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.ftx .x-ft-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){.ftx .x-nav .x-wrap{height:72px}
+.ftx .x-mob{inset:72px 0 0}
+.ftx .x-brand img{height:38px}
+.ftx .x-ft-grid{grid-template-columns:1fr}
+}
+.ftx .x-nav.x-island{position:fixed;left:0;right:0;top:0}
+.ftx .x-nav-sp{display:none;height:84px}
+.ftx .x-nav.x-island~.x-nav-sp{display:block}
+@media (max-width:640px){.ftx .x-nav-sp{height:72px}
+}
+.ftx .x-rpl{position:fixed;inset:0;z-index:10000;pointer-events:none;overflow:hidden}
+.ftx .x-rpl .x-ring{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:1.5px solid var(--gold);box-shadow:0 0 0 1px rgba(234,205,145,.25)}
+.ftx .x-rpl .x-core{position:absolute;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--gold2);border:1.5px solid var(--gold)}
+/* ===== FTA luxury theme for inner pages (matches the home page) ===== */
+.fta.ftx{--white:#FFFFFF;--ivory:#FAF6EC;--ink:#141414;--muted:#55534E;--line:#E4D9C2;--emerald:#006B43;--emerald-deep:#004F32;--mint:#EEF4EF;--gold:#A58A5B;--gold-text:#8A6F3E;--gold-tint:#F6EEDC;
+  font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white)}
+.fta.ftx main{display:block}
+/* type */
+.fta.ftx h1,.fta.ftx h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.005em}
+.fta.ftx h1{font-size:clamp(46px,6vw,84px);line-height:1.02}
+.fta.ftx h2{font-size:clamp(36px,4.4vw,56px);line-height:1.08}
+.fta.ftx main h3{font-weight:600}
+.fta.ftx .fta-eyebrow{font-size:12px;font-weight:500;letter-spacing:.32em;color:var(--gold-text)}
+.fta.ftx .fta-hero-line{background:var(--gold)}
+.fta.ftx .fta-em{color:var(--emerald);font-style:italic}
+.fta.ftx .fta-lead{color:var(--muted)}
+.fta.ftx .fta-sec{padding:clamp(72px,9vw,120px) 0}
+/* buttons: gold gradient primary, gold outline secondary, sharp corners */
+.fta.ftx .fta-btn{border-radius:999px;min-height:54px;padding:0 30px;font:600 13px/1 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;border:1px solid transparent}
+.fta.ftx a.fta-btn-primary{background:linear-gradient(135deg,#EACD91,#A58A5B);color:#0A0A0A;border-color:transparent}
+.fta.ftx a.fta-btn-primary:hover{background:linear-gradient(135deg,#EACD91,#A58A5B);color:#0A0A0A;box-shadow:0 10px 28px rgba(165,138,91,.35)}
+.fta.ftx a.fta-btn-outline,.fta.ftx a.fta-btn-gold{background:transparent;color:var(--ink);border-color:var(--gold)}
+.fta.ftx a.fta-btn-outline:hover,.fta.ftx a.fta-btn-gold:hover{background:rgba(165,138,91,.12);color:var(--ink);border-color:var(--gold);box-shadow:none}
+.fta.ftx a.fta-btn:hover{transform:translateY(-2px)}
+/* cards, chips, callouts: square, gold accents */
+.fta.ftx .fta-card{border-radius:0;border-color:var(--line);position:relative;padding:34px 30px}
+.fta.ftx .fta-card::before{content:"";position:absolute;top:-1px;left:30px;width:44px;height:2px;background:var(--gold);transition:width .35s}
+.fta.ftx .fta-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(60,45,15,.1);border-color:rgba(165,138,91,.6)}
+.fta.ftx .fta-card:hover::before{width:84px}
+.fta.ftx .fta-icon{background:var(--gold-tint)}
+.fta.ftx .fta-icon svg{stroke:var(--emerald)}
+.fta.ftx .fta-card:hover .fta-icon{background:var(--emerald)}
+.fta.ftx .fta-chip,.fta.ftx .fta-callout{border-radius:0}
+.fta.ftx .fta-chip{border-color:var(--line)}
+.fta.ftx .fta-chip i,.fta.ftx .fta-dot{background:var(--gold)}
+.fta.ftx .fta-callout{border-color:var(--gold)}
+.fta.ftx .fta-intake{border-radius:0;background:#0A0A0A}
+.fta.ftx .fta-intake .fta-eyebrow{color:#D9BC82}
+.fta.ftx .fta-step{border-top-color:var(--gold)}
+.fta.ftx .fta-step b{font-weight:500;color:var(--gold-text)}
+.fta.ftx .fta-stars{color:var(--gold)}
+.fta.ftx .fta-arrow{border-radius:0;border-color:var(--gold);background:transparent}
+.fta.ftx .fta-arrow:hover{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.fta.ftx .fta-dot-btn[aria-current="true"]::before{background:var(--gold)}
+.fta.ftx .fta-faq summary::after{color:var(--gold)}
+/* photos: thin gold offset frame + slow zoom */
+.fta.ftx .fta-photo,.fta.ftx .fta-zoom{border-radius:0}
+.fta.ftx .fta-gold-rule{border-bottom:0}
+.fta.ftx .fta-zoom{position:relative;overflow:visible;margin:18px 18px 18px 0}
+.fta.ftx .fta-zoom::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold);pointer-events:none;z-index:0}
+.fta.ftx .fta-zoom img{position:relative;z-index:1}
+.fta.ftx .fta-zoom:hover img{transform:scale(1.04)}
+.fta.ftx .fta-photo-frame::before{border-radius:0;border-color:var(--gold)}
+.fta.ftx .fta-photo-frame img{border-radius:0}
+/* section colours: black marble, ivory, white, emerald */
+.fta.ftx .fta-ivory{background:var(--ivory)}
+.fta.ftx .fta-white{background:var(--white)}
+.fta.ftx .fta-dark{position:relative;isolation:isolate;background:#0A0A0A;color:#fff}
+.fta.ftx .fta-dark::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(ellipse 55% 45% at 88% 0%,rgba(0,107,67,.32),transparent 70%),
+  linear-gradient(118deg,transparent 0 36%,rgba(234,205,145,.055) 40%,transparent 46%),
+  linear-gradient(62deg,transparent 0 54%,rgba(255,255,255,.035) 57%,transparent 61%),
+  linear-gradient(140deg,transparent 0 16%,rgba(234,205,145,.04) 21%,transparent 28%)}
+.fta.ftx .fta-dark::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .03' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.5'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+.fta.ftx .fta-green{background:linear-gradient(120deg,#003D27 0%,#006B43 48%,#00834E 100%);color:#fff}
+.fta.ftx :is(.fta-dark,.fta-green) :is(h1,h2,h3,h4,blockquote,summary,strong,b){color:#fff}
+.fta.ftx :is(.fta-dark,.fta-green) :is(p,li,.fta-lead,.fta-muted,figcaption,span:not(.fta-eyebrow):not(.fta-quote-mark)){color:rgba(255,255,255,.8)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-eyebrow{color:#D9BC82}
+.fta.ftx .fta-dark .fta-em{background:linear-gradient(135deg,#EACD91,#A58A5B);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#EACD91;padding-right:.06em}
+.fta.ftx .fta-green .fta-em{color:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) a:not(.fta-btn){color:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) a.fta-btn-outline,.fta.ftx :is(.fta-dark,.fta-green) a.fta-btn-gold{color:#fff;border-color:var(--gold)}
+.fta.ftx :is(.fta-dark,.fta-green) a.fta-btn-outline:hover,.fta.ftx :is(.fta-dark,.fta-green) a.fta-btn-gold:hover{color:#fff;background:rgba(234,205,145,.1)}
+.fta.ftx :is(.fta-dark,.fta-green) :is(.fta-card,.fta-chip,.fta-callout){background:rgba(255,255,255,.03);border-color:rgba(234,205,145,.4)}
+.fta.ftx .fta-green :is(.fta-card,.fta-chip,.fta-callout){background:rgba(0,40,24,.32)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-step{border-top-color:rgba(234,205,145,.6)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-step b{color:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-faq,.fta.ftx :is(.fta-dark,.fta-green) .fta-faq details{border-color:rgba(234,205,145,.35)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-faq summary::after{color:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-icon{background:rgba(234,205,145,.12)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-icon svg{stroke:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-checks svg{stroke:#EACD91}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-arrow{color:#fff}
+.fta.ftx .fta-dark .fta-slide{border:1px solid rgba(165,138,91,.45);background:rgba(255,255,255,.015)}
+.fta.ftx .fta-dark .fta-slide blockquote{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:rgba(255,255,255,.92)}
+.fta.ftx :is(.fta-dark,.fta-green) .fta-stars{color:#EACD91}
+/* values strip: gold band like the home page */
+.fta.ftx .fta-strip{background:linear-gradient(90deg,#A58A5B,#EACD91 50%,#A58A5B);border-top:1px solid #7d6640;border-bottom:1px solid #7d6640}
+.fta.ftx .fta-strip span{color:#1a160f;font-weight:500;text-transform:uppercase;letter-spacing:.2em;font-size:clamp(16px,1.5vw,20px)}
+.fta.ftx .fta-strip i{background:#1a160f}
+/* emerald call to action before the footer */
+.ftx .x-cta{background:linear-gradient(120deg,#003D27 0%,#006B43 48%,#00834E 100%);color:#fff;text-align:center;padding:clamp(80px,10vw,128px) 0}
+.ftx .x-cta hr{width:80px;height:1px;border:0;background:#EACD91;margin:0 auto 32px}
+.ftx .x-cta h2{margin:0 0 22px;font:500 clamp(40px,5.6vw,72px)/1.05 "Cormorant Garamond",Georgia,serif;color:#fff;text-wrap:balance}
+.ftx .x-cta p{margin:0 auto 40px;max-width:620px;color:rgba(255,255,255,.8);font-size:clamp(16px,1.35vw,18px);line-height:1.7}
+.ftx .x-cta .x-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.ftx .x-cta .x-btn-line{border-color:rgba(255,255,255,.75);color:#fff}
+@media (max-width:640px){.ftx .x-cta .x-row .x-btn{width:100%}}
+/* ring pages (team, tax forms, tax news) */
+.ftx #team{--ivory:#FAF6EC;--emerald:#006B43;--emerald-deep:#004F32;--gold:#A58A5B;--gold-text:#8A6F3E;--gold-tint:#F6EEDC;--line:#E4D9C2;--sans:Inter,"Helvetica Neue",Arial,sans-serif;--header-h:84px}
+.ftx #team .team__title{font-weight:500}
+.ftx #team .btn{border-radius:999px;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.ftx #team .btn-primary{background:linear-gradient(135deg,#EACD91,#A58A5B);color:#0A0A0A}
+.ftx #team .btn-primary:hover{color:#0A0A0A;box-shadow:0 10px 28px rgba(165,138,91,.35)}
+.ftx #team .eyebrow{font-weight:500;letter-spacing:.32em}
+@media (max-width:640px){.ftx #team{--header-h:72px}}
+/* current page in the menu */
+.ftx .x-menu>a[aria-current="page"]::after{right:0}
+.ftx .x-dd-panel a[aria-current="page"],.ftx .x-mob a[aria-current="page"]{color:#EACD91}
+@media (prefers-reduced-motion:reduce){.fta.ftx .fta-card,.fta.ftx .fta-zoom img{transition:none}}
+/* pill buttons with the home page shine + press effect */
+.ftx{--spring-b:cubic-bezier(.22,1,.36,1);--ease-b:cubic-bezier(.32,.72,0,1)}
+.ftx .x-btn,.fta.ftx .fta-btn,.ftx #team .btn{border-radius:999px;position:relative;overflow:hidden;isolation:isolate;transition:transform .55s var(--spring-b),box-shadow .25s,background .25s,color .25s}
+.ftx .x-btn::after,.fta.ftx .fta-btn::after,.ftx #team .btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:46%;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);transform:translateX(-140%) skewX(-18deg)}
+.ftx .x-btn-line::after,.fta.ftx .fta-btn-outline::after,.fta.ftx .fta-btn-gold::after{background:linear-gradient(100deg,transparent 0%,rgba(234,205,145,.28) 50%,transparent 100%)}
+.ftx .x-btn:hover::after,.ftx .x-btn:focus-visible::after,.fta.ftx .fta-btn:hover::after,.fta.ftx .fta-btn:focus-visible::after,.ftx #team .btn:hover::after{transform:translateX(330%) skewX(-18deg);transition:transform .95s var(--ease-b)}
+.ftx .x-btn:active,.fta.ftx .fta-btn:active,.ftx #team .btn:active{transform:scale(.96);transition-duration:90ms}
+.fta.ftx .fta-arrow{border-radius:50%}
+@media (prefers-reduced-motion:reduce){.ftx .x-btn::after,.fta.ftx .fta-btn::after,.ftx #team .btn::after{display:none}}
+/* P&L worksheet buttons */
+.ftx #fta-pl button{border-radius:999px;font:600 13px/1 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px}
+.ftx #fta-pl .b1{background:linear-gradient(135deg,#EACD91,#A58A5B);color:#0A0A0A;border-color:transparent}
+.ftx #fta-pl .b1:hover{background:linear-gradient(135deg,#EACD91,#A58A5B);color:#0A0A0A}
+.ftx #fta-pl .b2{background:transparent;color:#141414;border-color:#A58A5B}
+</style>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <style>
 .fta{--white:#FFFFFF;--ivory:#FAF8F4;--ink:#171717;--muted:#5C5A55;--line:#E7E3DA;--emerald:#006B48;--emerald-deep:#00543A;--mint:#EAF3EF;--gold:#C9A24D;--gold-text:#7F611E;--gold-tint:#F7F0DF;
   font-family:Manrope,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;text-align:left}
@@ -93,7 +317,7 @@
 .fta-sec{overflow-x:hidden;overflow-x:clip} /* keeps the hero photo zoom from pushing the page sideways on tablets */
 .fta-white{background:var(--white)}
 .fta-ivory{background:var(--ivory)}
-.fta-goldbg{background:var(--gold-tint)}
+.fta-green{background:var(--gold-tint)}
 .fta-mintbg{background:var(--mint)}
 .fta-ink{background:var(--ink);color:#fff}
 .fta-ink h2,.fta-ink h3{color:#fff}
@@ -250,7 +474,7 @@
 /* image protection: no save via right-click, drag or long-press */
 .fta img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 </style>
-<div class="fta"><header class="fta-header"><div class="fta-wrap"><a class="fta-logo" href="/" aria-label="Fortune Tax Advisors home"><img src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181dd1d68437cf864fd4.png" alt="Fortune Tax Advisors — Where Strategy Builds Wealth" width="183" height="48" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fta-logo-text" style="display:none">Fortune Tax Advisors</span></a><nav class="fta-nav" aria-label="Main"><a href="/services">Services</a><a href="/team" aria-current="page">Our Team</a><a href="/remote-filing">Remote Tax Filing</a><a href="/careers">Join the Team</a><span class="fta-dd"><button type="button" aria-haspopup="true">Resources &#9662;</button><span class="fta-dd-panel"><span class="fta-dd-in"><a href="/deductions">Tax Deductions Guide</a><a href="/tax-forms">Tax Forms</a><a href="/tax-news">Tax News</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a></span></span></span><a href="/about">About Us</a></nav><span class="fta-header-cta"><a class="fta-btn fta-btn-primary" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book My Appointment</a></span><details class="fta-menu"><summary aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><nav class="fta-menu-panel" aria-label="Mobile"><a href="/services">Services</a><a href="/team" aria-current="page">Meet Our Team</a><a href="/remote-filing">Remote Tax Filing</a><span class="fta-menu-label">Resources</span><a class="fta-sub" href="/deductions">Tax Deductions Guide</a><a class="fta-sub" href="/tax-forms">Tax Forms</a><a class="fta-sub" href="/tax-news">Tax News</a><a class="fta-sub" href="/profit-and-loss">Profit &amp; Loss Worksheet</a><a href="/careers">Join the Team</a><a href="/about">About Us</a><a class="fta-btn fta-btn-primary" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book My Appointment</a></nav></details></div></header><main><!-- ===== Meet Our Team (ring) ===== -->
+<div class="fta ftx"><header class="x-nav"><div class="x-wrap"><a class="x-brand" href="/" aria-label="Fortune Tax Advisors home"><img src="/img/logo-white.webp" alt="Fortune Tax Advisors — Where Strategy Builds Wealth" width="641" height="168"></a><div class="x-isl-mid"><nav class="x-menu" aria-label="Main"><a href="/services">Services</a><a href="/team" aria-current="page">Our Team</a><a href="/remote-filing">How It Works</a><div class="x-dd"><button type="button" aria-expanded="false" aria-controls="x-ddp">Resources ▾</button><div class="x-dd-panel" id="x-ddp"><a href="/deductions">Tax Deductions Guide</a><a href="/tax-forms">Tax Forms</a><a href="/tax-news">Tax News</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a><a href="/remote-filing">Remote Tax Filing</a></div></div><a href="/about">About</a></nav></div><a class="x-btn x-btn-gold" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book Now</a><button class="x-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="x-mob"><span></span><span></span><span></span></button></div></header><div class="x-mob" id="x-mob" data-lenis-prevent><a href="/">Home</a><a href="/services">Services</a><a href="/team" aria-current="page">Our Team</a><a href="/remote-filing">How It Works</a><a href="/about">About Us</a><small>Resources</small><a href="/deductions">Tax Deductions Guide</a><a href="/tax-forms">Tax Forms</a><a href="/tax-news">Tax News</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a><a href="/remote-filing">Remote Tax Filing</a><small>Careers</small><a href="/careers">Join the Team</a><a class="x-btn x-btn-gold" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book My Appointment</a></div><main><!-- ===== Meet Our Team (ring) ===== -->
 <style>
 #team{
   color-scheme:light;
@@ -787,7 +1011,7 @@ if(!RM)play(true);
 })();
 </script>
 <!-- ===== end Meet Our Team ===== -->
-</main><footer class="fta-footer"><div class="fta-wrap"><div class="fta-cta"><div><span class="fta-eyebrow">Get started</span><h2 style="margin-top:10px">Let's build your financial future.</h2><p>Whether you're filing your taxes or starting a new career, your next step starts here.</p></div><div class="fta-actions"><a class="fta-btn fta-btn-primary" href="https://links.myfortunetax.com/widget/form/xqFUFSutcMqe2VJlpqVB" target="_blank" rel="noopener">Become a Client</a><a class="fta-btn fta-btn-gold" href="https://links.myfortunetax.com/widget/form/bKhEQ8iKedM8YpkbjI17" target="_blank" rel="noopener">Join Our Team</a></div></div><div class="fta-fcols"><div><img src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181d736386d0dc2d5870.png" alt="Fortune Tax Advisors — Where Strategy Builds Wealth" width="214" height="56" style="height:56px;width:auto" loading="lazy"><span style="color:#D6D3CC;margin-top:8px">Virtual tax services nationwide<br>United States</span></div><nav aria-label="Footer"><h3>Quick links</h3><a href="/services">Services</a><a href="/team" aria-current="page">Meet Our Team</a><a href="/remote-filing">Remote Tax Filing</a><a href="/deductions">Tax Deductions Guide</a><a href="/tax-forms">Tax Forms</a><a href="/tax-news">Tax News</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a><a href="/about">About Us</a><a href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book an Appointment</a><a href="/privacy-policy">Privacy Policy</a></nav><div><h3>Careers</h3><a href="/careers">Join the Team</a><a href="https://links.myfortunetax.com/widget/form/bKhEQ8iKedM8YpkbjI17" target="_blank" rel="noopener">Apply Now</a><a href="https://checklist.myfortunetax.com" target="_blank" rel="noopener">Team Checklist</a></div><div><h3>Get in touch</h3><a href="tel:+15865005390">(586) 500-5390</a><a href="mailto:info@myfortunetax.com">info@myfortunetax.com</a><a href="https://www.instagram.com/fortunetaxadvisors/" target="_blank" rel="noopener">Instagram @fortunetaxadvisors</a></div></div><div class="fta-intake" id="tax-season-intake"><div><span class="fta-eyebrow">For tax season clients</span><h3>Tax Season Client Intake Form</h3><p>Already working with one of our preparers? Complete your full intake here: your information, dependents, refund details and documents in one secure form.</p></div><a class="fta-btn fta-btn-primary" href="https://links.myfortunetax.com/widget/form/QT9YHqyl4gyLGAWkDCoh" target="_blank" rel="noopener">Start My Intake Form</a></div><span class="fta-copy">© 2026 Fortune Tax Advisors LLC. All rights reserved.</span></div></footer></div>
+</main><section class="x-cta" aria-labelledby="x-cta-h"><div class="x-wrap"><hr><h2 id="x-cta-h">Let’s build your financial future.</h2><p>Book a time with a Fortune Tax strategist and file with confidence this season.</p><div class="x-row"><a class="x-btn x-btn-gold" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Book My Appointment</a><a class="x-btn x-btn-line" href="https://links.myfortunetax.com/widget/form/QT9YHqyl4gyLGAWkDCoh" target="_blank" rel="noopener">Start My Intake Form</a></div></div></section><footer class="x-foot"><div class="x-wrap"><div class="x-ft-grid"><div><img src="/img/logo-white.webp" alt="Fortune Tax Advisors" width="641" height="168" loading="lazy" decoding="async"><p>Virtual tax services, nationwide. Year-round support from real strategists.</p></div><div><h4>Quick links</h4><a href="/services">Services</a><a href="/team">Meet Our Team</a><a href="/remote-filing">Remote Tax Filing</a><a href="/deductions">Tax Deductions Guide</a><a href="/tax-forms">Tax Forms</a><a href="/tax-news">Tax News</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a><a href="/about">About Us</a></div><div><h4>Careers</h4><a href="/careers">Join Our Team</a><a href="https://links.myfortunetax.com/widget/form/bKhEQ8iKedM8YpkbjI17" target="_blank" rel="noopener">Apply Now</a><a href="https://checklist.myfortunetax.com">Team Checklist</a></div><div><h4>Contact</h4><a href="tel:+15865005390">(586) 500-5390</a><a href="mailto:info@myfortunetax.com">info@myfortunetax.com</a><a href="https://www.instagram.com/fortunetaxadvisors/" target="_blank" rel="noopener">Instagram @fortunetaxadvisors</a><a href="https://links.myfortunetax.com/widget/form/QT9YHqyl4gyLGAWkDCoh" target="_blank" rel="noopener">Tax Season Intake Form</a></div></div><div class="x-ft-bot"><span>© 2026 Fortune Tax Advisors LLC. All rights reserved.</span><span><a href="/privacy-policy">Privacy Policy</a> · Remote · Nationwide</span></div></div></footer></div>
 <script>
 (function(){
   var root=document.querySelector('.fta'); if(!root||root.dataset.ftaInit) return; root.dataset.ftaInit='1';
@@ -864,5 +1088,45 @@ if(!RM)play(true);
 </script>
 <script>(function(){var r=document.querySelector('.fta');if(!r||r.dataset.ftaImgLock)return;r.dataset.ftaImgLock='1';
 ['contextmenu','dragstart'].forEach(function(ev){r.addEventListener(ev,function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault()})});})();</script>
+<script>
+(function(){
+  var root=document.querySelector(".ftx");if(!root)return;
+  var RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var nav=root.querySelector(".x-nav"),nw=nav&&nav.querySelector(".x-wrap"),b=root.querySelector(".x-burger"),m=document.getElementById("x-mob");
+  /* mobile menu */
+  function shut(){m.classList.remove("x-open");b.classList.remove("x-x");b.setAttribute("aria-expanded","false");document.body.style.overflow=""}
+  if(b&&m){b.addEventListener("click",function(){var o=m.classList.toggle("x-open");b.classList.toggle("x-x",o);b.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":""});
+    m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",shut)});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("x-open"))shut()})}
+  /* resources dropdown */
+  var dd=root.querySelector(".x-dd"),db=dd&&dd.querySelector("button");
+  if(dd){db.addEventListener("click",function(){var o=dd.classList.toggle("x-open");db.setAttribute("aria-expanded",o)});
+    document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("x-open");db.setAttribute("aria-expanded","false")}})}
+  /* header spacer + dynamic-island nav */
+  if(nav){var sp=document.createElement("div");sp.className="x-nav-sp";sp.setAttribute("aria-hidden","true");nav.parentNode.insertBefore(sp,nav.nextSibling);
+    var menuEls=nav.querySelectorAll(".x-menu>a,.x-dd>button"),isl=false,tk=false;
+    function setOpen(v){v=v&&isl;nav.classList.toggle("x-open",v);menuEls.forEach(function(el){if(isl&&!v)el.tabIndex=-1;else el.removeAttribute("tabindex")});
+      if(!v&&dd){dd.classList.remove("x-open");db.setAttribute("aria-expanded","false")}}
+    function chk(){tk=false;var on=(window.scrollY||0)>120;if(on!==isl){isl=on;nav.classList.toggle("x-island",on);setOpen(false)}}
+    window.addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(chk)}},{passive:true});chk();
+    nw.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")setOpen(true)});
+    nw.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse")setOpen(false)});
+    nw.addEventListener("focusin",function(){setOpen(true)});
+    nw.addEventListener("focusout",function(e){if(!nw.contains(e.relatedTarget))setOpen(false)});
+    nw.addEventListener("click",function(e){if(isl&&!nav.classList.contains("x-open")&&!e.target.closest("a,.x-burger"))setOpen(true)})}
+  /* gold ripple on click */
+  if(!RM&&Element.prototype.animate){var layer=document.createElement("div");layer.className="x-rpl";layer.setAttribute("aria-hidden","true");root.appendChild(layer);
+    function an(el,a,z,o){var k=el.animate([a,z],o);k.onfinish=function(){el.remove()}}
+    document.addEventListener("pointerdown",function(e){if(e.button>0)return;var p="translate("+e.clientX+"px,"+e.clientY+"px) ";
+      for(var i=0;i<2;i++){var r=document.createElement("i");r.className="x-ring";layer.appendChild(r);
+        an(r,{opacity:.85,transform:p+"scale(.15)"},{opacity:0,transform:p+"scale("+(3.4-i*.9)+")"},{duration:1100+i*150,delay:i*140,easing:"cubic-bezier(.2,.7,.1,1)",fill:"both"})}
+      var c=document.createElement("i");c.className="x-core";layer.appendChild(c);
+      an(c,{opacity:1,transform:p+"scale(1)"},{opacity:0,transform:p+"scale(2.2)"},{duration:500,easing:"ease-out",fill:"both"})},{passive:true})}
+  /* smooth scrolling (same as the home page); skipped if the library didn't load */
+  (function(f){if(typeof Lenis!=="undefined")return f();var s=document.querySelector('script[src*="lenis"]');if(s)s.addEventListener("load",f)})(function(){if(typeof Lenis!=="undefined"&&!RM){var lenis=new Lenis({lerp:.08,smoothWheel:true,anchors:{offset:-90}});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+    if(m&&"MutationObserver" in window)new MutationObserver(function(){m.classList.contains("x-open")?lenis.stop():lenis.start()}).observe(m,{attributes:true,attributeFilter:["class"]})}});
+})();
+</script>
 </body>
 </html>
