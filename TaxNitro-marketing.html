@@ -1,0 +1,257 @@
+<style id="fta-fullwidth">
+/* TaxNitro: let the FTA page fill the full screen width (like myfortunetax.com) */
+.c-section:has(.fta){padding:0!important;margin:0!important}
+.c-section:has(.fta) .inner{max-width:none!important;width:100%!important;margin:0!important;padding:0!important}
+.c-row:has(.fta),.c-column:has(.fta),.c-custom-code:has(.fta),.custom-code-container:has(.fta){padding:0!important;margin:0!important;max-width:none!important;width:100%!important}
+body:has(.fta){overflow-x:hidden}
+/* keep italic letters from being cut off */
+.fta-w{padding-right:.14em!important;margin-right:-.14em!important;padding-left:.04em;margin-left:-.04em}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --cream:#FAF6EC;--paper:#FFFFFF;--ink:#141414;--muted:#55534E;--line:#E4D9C2;
+  --emerald:#006B43;--emerald-deep:#003D27;--mint:#E6F2EC;
+  --gold:#A58A5B;--gold-soft:#EACD91;--gold-text:#8A6F3E;--gold-tint:#F5EEDC;--gold-l:#D9BC82;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{background:#0A0A0A}
+body{font-family:var(--sans);color:var(--ink);background:#0A0A0A;line-height:1.55;-webkit-font-smoothing:antialiased}
+/* dark marble + gold particles behind the sheet, same as the privacy policy page.
+   On a wrapper (not body) so it also shows inside TaxNitro's white sections. */
+.mk-bg{position:relative;isolation:isolate;background:#0A0A0A;min-height:100vh;overflow:hidden}
+.mk-bg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(ellipse 55% 45% at 88% 0%,rgba(0,107,67,.32),transparent 70%),
+  linear-gradient(118deg,transparent 0 36%,rgba(234,205,145,.055) 40%,transparent 46%),
+  linear-gradient(62deg,transparent 0 54%,rgba(255,255,255,.035) 57%,transparent 61%),
+  linear-gradient(140deg,transparent 0 16%,rgba(234,205,145,.04) 21%,transparent 28%)}
+.mk-bg::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .03' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.5'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+.fta-pcv{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block}
+a{color:var(--emerald)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 40px}
+.sheet{background:var(--cream);border:1.5px solid var(--gold-soft);border-radius:18px;padding:28px clamp(16px,4vw,40px) 30px;box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--line)}
+.logo{display:block;margin:0 auto 22px;width:210px;max-width:62%;height:auto}
+.rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+
+.hero{background:linear-gradient(135deg,#00834E 0%,var(--emerald) 45%,var(--emerald-deep) 100%);color:#fff;border-radius:16px;padding:clamp(22px,4vw,34px);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,211,154,.22),transparent 70%)}
+.kicker{font:500 12px/1.4 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+.hero h1{font-family:var(--serif);font-size:clamp(36px,6vw,56px);line-height:1.08;font-weight:500;letter-spacing:-.005em;max-width:560px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero p{margin-top:12px;max-width:620px;font-size:15px;color:#E9F3EE}
+.cap{font-size:44px;position:absolute;right:28px;top:50%;transform:translateY(-50%)}
+@media (max-width:640px){.cap{display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips a{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);transition:background .2s}
+.chips a:hover{background:rgba(255,255,255,.26)}
+
+.sec{margin-top:30px;scroll-margin-top:16px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-family:var(--serif);color:var(--emerald);font-size:clamp(28px,3.4vw,34px);font-weight:500;line-height:1.1}
+.sec-h .ic{font-size:20px}
+.sec-h:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,77,0))}
+.sub{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.tip{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:11px 14px;font-size:14px;transition:transform .2s,box-shadow .2s}
+.tip:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.tip b{color:var(--emerald)}
+
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tool{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.tool h3{font-family:var(--serif);color:var(--emerald);font-size:23px;font-weight:600;display:flex;align-items:center;gap:8px}
+.tool p{font-size:13.5px;color:var(--muted);flex:1}
+.tool .fav{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--gold-tint);color:var(--gold-text);padding:2px 8px;border-radius:999px}
+.tool a.go{align-self:flex-start;font-size:13px;font-weight:600;text-decoration:none;color:var(--emerald);border-bottom:1.5px solid var(--gold)}
+
+.feature{background:var(--paper);border:1.5px solid var(--gold-soft);border-radius:16px;padding:18px 20px}
+.feature h3{font-family:var(--serif);color:var(--emerald);font-size:26px;font-weight:600}
+.feature p{font-size:14px;margin-top:6px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;font-size:14px}
+.steps li:before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--emerald);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.note{margin-top:12px;background:var(--gold-tint);border-radius:10px;padding:10px 14px;font-size:13.5px;color:#4A3A12}
+.btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#0A0A0A;text-decoration:none;font:600 12.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;border-radius:0;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(165,138,91,.35)}
+
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.idea{background:var(--emerald);color:#fff;border-radius:12px;padding:14px 16px;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+.idea span{font-size:20px;line-height:1}
+
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.goals{grid-template-columns:1fr 1fr}}
+.goal{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.goal b{display:block;font-family:var(--serif);color:var(--emerald);font-size:32px;font-weight:600;line-height:1.1}
+.goal small{font-size:12.5px;color:var(--muted)}
+.list{list-style:none;padding:0;margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:640px){.list{grid-template-columns:1fr}}
+.list li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;display:flex;gap:8px}
+.list li:before{content:"✓";color:var(--gold);font-weight:700}
+
+.rules{background:#FFF;border:1.5px solid #E7C9C3;border-radius:14px;padding:14px 18px}
+.rules h3{font-family:var(--serif);color:#8A2E22;font-size:23px;font-weight:600}
+.rules ul{margin:8px 0 0;padding-left:18px;font-size:14px}
+.rules li{margin:3px 0}
+
+.quote{margin-top:26px;text-align:center;background:var(--emerald);color:#fff;border-radius:16px;padding:22px 18px}
+.quote p{font-family:var(--serif);font-size:clamp(22px,3.4vw,28px);line-height:1.35;font-weight:500}
+.quote p b{color:var(--gold-soft)}
+.close{text-align:center;margin-top:22px}
+.close p{font-family:var(--serif);font-style:italic;color:var(--emerald);font-size:24px;font-weight:500}
+.close small{display:block;margin-top:4px;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--gold-text)}
+.foot{text-align:center;margin-top:20px;font-size:11px;letter-spacing:2.5px;color:var(--gold-text)}
+</style>
+
+<div class="fta mk-bg" data-particles="234,205,145">
+<div class="wrap">
+ <div class="sheet">
+  <img class="logo rise" src="https://assets.cdn.filesafe.space/yuXRpvURs16obSKGI62d/media/6ae2181dd1d68437cf864fd4.png" alt="Fortune Tax Advisors – Where Strategy Builds Wealth" width="210" height="76">
+
+  <section class="hero rise" style="animation-delay:.08s">
+    <div class="kicker">FTA Marketing Toolkit</div>
+    <h1>Let's talk <em>marketing!</em></h1>
+    <p>Tips, tools and resources to help you elevate your content, build your personal brand and start attracting more tax clients this season.</p>
+    <nav class="chips" aria-label="Jump to section">
+      <a href="#photos">📸 Photos &amp; videos</a>
+      <a href="#apps">🎬 Apps</a>
+      <a href="#ai">🤖 AI videos</a>
+      <a href="#print">🪪 Cards &amp; flyers</a>
+      <a href="#post">📲 What to post</a>
+      <a href="#consistency">🚀 Consistency</a>
+    </nav>
+    <div class="cap" aria-hidden="true">📣</div>
+  </section>
+
+  <section class="sec rise" id="photos" style="animation-delay:.14s">
+    <div class="sec-h"><span class="ic">📸</span><h2>Photos &amp; videos</h2></div>
+    <div class="grid">
+      <div class="tip"><b>Invest in a ring light.</b> Good lighting makes a huge difference.</div>
+      <div class="tip"><b>Your phone is powerful.</b> Search TikTok or YouTube for the best camera settings for your phone model.</div>
+      <div class="tip"><b>Keep it clean.</b> Clean background, steady camera, clear video.</div>
+      <div class="tip"><b>Be yourself!</b> People connect with real personalities, not just professional pictures.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="apps" style="animation-delay:.2s">
+    <div class="sec-h"><span class="ic">🎬</span><h2>Content &amp; editing apps</h2></div>
+    <div class="tools">
+      <div class="tool"><h3>CapCut</h3><p>Edit videos, add transitions and create reels.</p><a class="go" href="https://www.capcut.com" target="_blank" rel="noopener">Open CapCut →</a></div>
+      <div class="tool"><h3>Captions</h3><p>Add professional subtitles and make your talking videos more engaging.</p><a class="go" href="https://www.captions.ai" target="_blank" rel="noopener">Open Captions →</a></div>
+      <div class="tool"><h3>AirBrush</h3><p>Touch up your photos while keeping them natural.</p><a class="go" href="https://airbrush.com" target="_blank" rel="noopener">Open AirBrush →</a></div>
+      <div class="tool"><h3>Edits <span class="fav">Samara's favorite</span></h3><p>Instagram's editing app. Edit reels and use the teleprompter when recording speaking videos. Find it in the App Store or Google Play.</p></div>
+      <div class="tool"><h3>Canva</h3><p>Create flyers, social media posts, business cards and other marketing materials.</p><a class="go" href="https://www.canva.com" target="_blank" rel="noopener">Open Canva →</a></div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="ai" style="animation-delay:.26s">
+    <div class="sec-h"><span class="ic">🤖</span><h2>AI content creation</h2></div>
+    <div class="feature">
+      <h3>Higgsfield: AI marketing videos</h3>
+      <p>Create AI marketing videos with Higgsfield. There's a step-by-step tutorial inside <b>Tax Preparer Academy on Skool</b>:</p>
+      <ol class="steps">
+        <li>Log into Skool → Tax Preparer Academy.</li>
+        <li>Go to General Discussion and scroll back through the posts and announcements.</li>
+        <li>Find the post by Kenisha Johnson, dated September 20.</li>
+        <li>Watch “Create AI Videos Using HiggsField Credits” (5 min 38 sec).</li>
+      </ol>
+      <div class="note">💡 Watch the tutorial <b>before</b> buying credits or a subscription. Higgsfield has different plans and credit options depending on the features you need.</div>
+      <a class="btn" href="https://higgsfield.ai" target="_blank" rel="noopener">Visit higgsfield.ai</a>
+    </div>
+  </section>
+
+  <section class="sec rise" id="print" style="animation-delay:.32s">
+    <div class="sec-h"><span class="ic">🪪</span><h2>Business cards &amp; flyers</h2></div>
+    <div class="grid">
+      <div class="tip"><b>Design:</b> Canva, ChatGPT or Claude can help you brainstorm and create marketing materials.</div>
+      <div class="tip"><b>Printing:</b> <a href="https://www.vistaprint.com" target="_blank" rel="noopener">Vistaprint</a>, <a href="https://www.canva.com/print/" target="_blank" rel="noopener">Canva</a> or <a href="https://allprocolor.com" target="_blank" rel="noopener">All Pro Color</a>.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="post" style="animation-delay:.38s">
+    <div class="sec-h"><span class="ic">📲</span><h2>What should you post?</h2></div>
+    <p class="sub">Don't just post “I'm doing taxes!” Give people a reason to trust <b>you</b>.</p>
+    <div class="ideas">
+      <div class="idea"><span>👋</span>Introduce yourself as a Fortune Tax Advisors tax preparer.</div>
+      <div class="idea"><span>📚</span>Share educational tax tips and common mistakes.</div>
+      <div class="idea"><span>😂</span>Create relatable videos about everyday financial situations.</div>
+      <div class="idea"><span>🎯</span>Explain who you help: W-2 employees, self-employed, business owners and more.</div>
+      <div class="idea"><span>🎬</span>Share behind-the-scenes content of your training and tax season prep.</div>
+      <div class="idea"><span>💼</span>Talk about our services and how clients can get started.</div>
+    </div>
+  </section>
+
+  <section class="sec rise" id="consistency" style="animation-delay:.44s">
+    <div class="sec-h"><span class="ic">🚀</span><h2>Consistency is key</h2></div>
+    <div class="goals">
+      <div class="goal"><b>4–5×</b><small>posts per week</small></div>
+      <div class="goal"><b>Daily</b><small>show up on your stories</small></div>
+      <div class="goal"><b>Now</b><small>start building your client list, don't wait for January</small></div>
+    </div>
+    <ul class="list">
+      <li>Engage with potential clients and your local community.</li>
+      <li>Share your intake link with a clear call to action.</li>
+      <li>Respond to comments and messages.</li>
+      <li>Support each other's content: like, comment and share.</li>
+    </ul>
+    <div class="note">🔗 <b>Your intake link:</b> share <a href="https://links.myfortunetax.com/widget/form/xqFUFSutcMqe2VJlpqVB" target="_blank" rel="noopener">our Become a Client form</a>, or ask Ariel for your personal booking link and QR code.</div>
+  </section>
+
+  <section class="sec rise" style="animation-delay:.5s">
+    <div class="rules">
+      <h3>⚠️ Always remember</h3>
+      <ul>
+        <li>Make sure your tax information is accurate.</li>
+        <li>Never guarantee refunds.</li>
+        <li>Protect client information.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="quote rise" style="animation-delay:.56s">
+    <p>Consistency builds <b>visibility</b>. Visibility builds <b>trust</b>. And trust brings <b>clients!</b> 💰</p>
+  </div>
+
+  <div class="close">
+    <p>Be creative, be authentic, and let your personality shine!</p>
+    <small>QUESTIONS? REACH OUT ANYTIME · THE FTA TEAM</small>
+  </div>
+  <div class="foot">FORTUNE TAX ADVISORS · WHERE STRATEGY BUILDS WEALTH</div>
+ </div>
+</div>
+</div>
+<script>
+/* gold particle drift: rises slowly behind elements marked data-particles="r,g,b" (same as privacy policy) */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!window.requestAnimationFrame)return;
+  document.querySelectorAll('[data-particles]').forEach(function(root){
+    var cv=document.createElement('canvas');cv.className='fta-pcv';cv.setAttribute('aria-hidden','true');root.appendChild(cv);
+    var ctx=cv.getContext('2d'),rgb=root.dataset.particles,w=0,h=0,dpr=1,ps=[],on=false,last=0,t=0;
+    function fit(){w=root.clientWidth;h=root.clientHeight;
+      dpr=Math.min(window.devicePixelRatio||1,2,Math.sqrt(8e6/Math.max(1,w*h))); /* caps canvas memory on the tall page */
+      cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);
+      var n=Math.min(140,Math.round(w*h/9000));
+      while(ps.length<n)ps.push({x:Math.random(),y:Math.random(),z:Math.random(),ph:Math.random()*6.28});ps.length=n}
+    function loop(now){
+      if(!on)return;requestAnimationFrame(loop);
+      var dt=now-last;last=now;if(dt>200)return;
+      if(root.clientWidth!==w||root.clientHeight!==h)fit();
+      t+=dt/1000;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+      for(var i=0;i<ps.length;i++){var p=ps[i];
+        p.y-=dt/1000*(10+p.z*40)/h;
+        if(p.y<-.05){p.y=1.05;p.x=Math.random()}
+        ctx.beginPath();
+        ctx.arc(p.x*w+Math.sin(t*.5+p.ph)*7*(.4+p.z),p.y*h,.9+p.z*2.6,0,6.2832);
+        ctx.fillStyle='rgba('+rgb+','+(.14+p.z*.5).toFixed(2)+')';ctx.fill()}
+    }
+    fit();
+    /* only animate while it is on screen */
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!on){on=true;last=performance.now();requestAnimationFrame(loop)}on=v}).observe(root);
+    else{on=true;requestAnimationFrame(loop)}
+  });
+})();
+</script>
