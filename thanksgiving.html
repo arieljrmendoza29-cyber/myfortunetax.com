@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Happy Thanksgiving | Fortune Tax Advisors</title>
+<meta name="description" content="A Thanksgiving note from the Fortune Tax Advisors family.">
+<meta property="og:title" content="A Thanksgiving note from the FTA family">
+<meta property="og:description" content="Tap to open your card.">
+<meta property="og:image" content="https://myfortunetax.com/img/careers-1100.webp">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --black:#0A0A0A;--ivory:#FAF6EC;--ink:#1d1b17;--mut:#5b574e;
+  --em:#006B43;--em-d:#003D27;--em2:#00834E;
+  --gold:#A58A5B;--gold2:#EACD91;--gold-t:#8A6F3E;--rust:#9C4A26;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{min-height:100%;background:var(--black);color:#fff;font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.stage{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:48px max(16px,env(safe-area-inset-left)) 64px;isolation:isolate;overflow:hidden}
+.stage::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(ellipse 60% 45% at 50% 0%,rgba(0,107,67,.38),transparent 70%),
+  radial-gradient(ellipse 50% 40% at 50% 100%,rgba(165,138,91,.16),transparent 70%),
+  linear-gradient(118deg,transparent 0 36%,rgba(234,205,145,.05) 40%,transparent 46%),
+  linear-gradient(62deg,transparent 0 54%,rgba(255,255,255,.03) 57%,transparent 61%),#0A0A0A}
+.brand{position:absolute;top:22px;left:0;right:0;display:flex;justify-content:center}
+.brand img{height:40px;width:auto;opacity:.95}
+
+/* falling leaves */
+.leaves{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.leaf{position:absolute;top:-40px;width:var(--s);height:var(--s);opacity:.0;animation:fall var(--d) linear var(--dl) infinite}
+.leaf svg{width:100%;height:100%;animation:sway calc(var(--d)/3) ease-in-out infinite alternate}
+@keyframes fall{0%{transform:translate3d(0,-40px,0) rotate(0);opacity:0}8%{opacity:var(--o)}90%{opacity:var(--o)}100%{transform:translate3d(var(--x),110vh,0) rotate(var(--r));opacity:0}}
+@keyframes sway{from{transform:translateX(-14px) rotate(-12deg)}to{transform:translateX(14px) rotate(14deg)}}
+
+/* envelope */
+.scene{position:relative;width:min(380px,88vw);aspect-ratio:3/2;perspective:1100px;transition:transform .9s cubic-bezier(.6,0,.2,1),opacity .7s ease}
+.env{position:absolute;inset:0;border:0;padding:0;background:none;cursor:pointer;font:inherit;color:inherit}
+.env-back{position:absolute;inset:0;background:linear-gradient(150deg,#0b5a3b,#003D27);border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.55),0 0 0 1px rgba(234,205,145,.35) inset}
+.mini{position:absolute;left:6%;right:6%;top:8%;height:84%;background:var(--ivory);border-radius:3px;display:grid;place-items:center;text-align:center;color:var(--ink);
+  box-shadow:0 0 0 1px rgba(165,138,91,.6) inset,0 0 0 6px var(--ivory) inset,0 0 0 7px rgba(165,138,91,.45) inset;transition:transform 1s cubic-bezier(.2,.8,.2,1);z-index:1}
+.mini .mt{display:block}.mini b{display:block;font:italic 500 clamp(24px,7vw,34px)/1.05 var(--serif);color:var(--em)}
+.mini .ms{display:block;margin-top:8px;font:600 9.5px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-t)}
+.env-front{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:6px;overflow:hidden}
+.env-front::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#00754a,#00563a);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.env-front::after{content:"";position:absolute;inset:0;background:linear-gradient(20deg,#006B43,#004a31);clip-path:polygon(0 100%,50% 50%,100% 100%)}
+.edge{position:absolute;inset:0;z-index:3;pointer-events:none}
+.edge svg{width:100%;height:100%}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;transform-origin:50% 0;transition:transform .75s cubic-bezier(.5,0,.3,1),z-index 0s .35s;transform-style:preserve-3d}
+.flap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#00824f,#005f3d);clip-path:polygon(0 0,100% 0,50% 100%);filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}
+.flap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(234,205,145,.9),rgba(165,138,91,.9));clip-path:polygon(0 0,1.2% 0,50% 97.6%,98.8% 0,100% 0,50% 100%)}
+.seal{position:absolute;left:50%;top:58%;z-index:5;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,#F3DDA8,#C9A86A 45%,#8E7243 100%);box-shadow:0 6px 16px rgba(0,0,0,.45),0 0 0 3px rgba(142,114,67,.5) inset;
+  font:600 17px/1 var(--serif);letter-spacing:.06em;color:#3a2c12;transition:transform .45s ease,opacity .4s ease}
+.seal::after{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid rgba(58,44,18,.35)}
+.hint{position:absolute;left:0;right:0;top:calc(100% + 26px);text-align:center;font:500 11.5px/1.4 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);animation:pulse 2.2s ease-in-out infinite}
+.to{position:absolute;left:0;right:0;bottom:calc(100% + 20px);text-align:center;font:italic 500 clamp(22px,6vw,28px)/1.2 var(--serif);color:#fff}
+.to small{display:block;margin-bottom:6px;font:500 10.5px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;font-style:normal;color:var(--gold2)}
+@keyframes pulse{50%{opacity:.45}}
+.env:hover .seal,.env:focus-visible .seal{transform:scale(1.06)}
+.env:focus-visible{outline:2px solid var(--gold2);outline-offset:10px;border-radius:8px}
+
+/* opening sequence */
+.opened .seal{transform:scale(.6);opacity:0}
+.opened .flap{transform:rotateX(180deg);z-index:0}
+.opened .hint{opacity:0;animation:none}
+.lifted .mini{transform:translateY(-62%)}
+.revealed .scene{transform:translateY(40vh) scale(.9);opacity:0}
+
+/* the full card */
+.card{position:absolute;inset:0;display:grid;place-items:center;padding:72px max(16px,env(safe-area-inset-left)) 40px;opacity:0;visibility:hidden;transform:translateY(24px) scale(.97);transition:opacity .8s ease .15s,transform .9s cubic-bezier(.2,.8,.2,1) .15s,visibility 0s .9s;overflow-y:auto}
+.revealed .card{opacity:1;visibility:visible;transform:none;transition-delay:.15s,.15s,0s}
+.paper{position:relative;width:min(560px,100%);background:var(--ivory);color:var(--ink);padding:clamp(34px,6vw,56px) clamp(24px,6vw,54px) clamp(30px,5vw,46px);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.paper::before{content:"";position:absolute;inset:10px;border:1px solid rgba(165,138,91,.65);pointer-events:none}
+.paper::after{content:"";position:absolute;inset:15px;border:1px solid rgba(165,138,91,.28);pointer-events:none}
+.eyebrow{margin:0 0 12px;text-align:center;font:600 11px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold-t)}
+.paper h1{margin:0 0 6px;text-align:center;font:italic 500 clamp(40px,9vw,58px)/1 var(--serif);color:var(--em)}
+.rule{display:flex;align-items:center;gap:12px;justify-content:center;margin:18px 0 26px;color:var(--gold)}
+.rule::before,.rule::after{content:"";width:60px;height:1px;background:currentColor}
+.photo{position:relative;margin:0 14px 30px 14px}
+.photo::before{content:"";position:absolute;inset:-12px 12px 12px -12px;border:1px solid var(--gold)}
+.photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.msg p{margin:0 0 14px;font-size:16px;line-height:1.75;color:var(--mut)}
+.msg .dear{font:500 24px/1.3 var(--serif);color:var(--ink);margin-bottom:12px}
+.msg .closing{font:italic 500 23px/1.35 var(--serif);color:var(--em);margin:20px 0 4px;text-align:center}
+.sign{margin-top:26px;text-align:center}
+.sign small{display:block;font:500 11px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-t);margin-bottom:10px}
+.sign b{display:block;font:italic 600 30px/1.1 var(--serif);color:var(--ink)}
+.sign span{display:block;margin-top:12px;font:500 11px/1.4 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-t)}
+.foot{margin-top:28px;padding-top:20px;border-top:1px solid rgba(165,138,91,.35);display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;font-size:13px}
+.foot a{color:var(--em);text-decoration:none;font-weight:600}
+.foot a:hover{text-decoration:underline}
+.again{display:block;margin:22px auto 0;background:none;border:1px solid rgba(234,205,145,.55);color:var(--gold2);border-radius:999px;padding:12px 24px;font:600 11.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;cursor:pointer}
+.again:hover{background:rgba(234,205,145,.1)}
+@media (prefers-reduced-motion:reduce){.leaf{display:none}.hint{animation:none}*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="stage" id="stage">
+  <div class="leaves" id="leaves" aria-hidden="true"></div>
+  <div class="brand"><img src="/img/logo-white.webp" alt="Fortune Tax Advisors" width="641" height="168"></div>
+
+  <div class="scene" id="scene">
+    <p class="to"><small>A note for</small><span id="toName">you</span></p>
+    <button class="env" id="env" type="button" aria-label="Open your Thanksgiving card">
+      <span class="env-back"></span>
+      <span class="mini"><span class="mt"><b>Happy<br>Thanksgiving</b><span class="ms">From the FTA family</span></span></span>
+      <span class="env-front"></span>
+      <span class="edge"><svg viewBox="0 0 300 200" preserveAspectRatio="none"><path d="M2 198 L150 100 L298 198" fill="none" stroke="#C9A86A" stroke-opacity=".55" stroke-width="1"/></svg></span>
+      <span class="flap"></span>
+      <span class="seal">FTA</span>
+    </button>
+    <p class="hint">Tap the seal to open</p>
+  </div>
+
+  <section class="card" aria-live="polite">
+    <article class="paper">
+      <p class="eyebrow">Happy Thanksgiving</p>
+      <h1>With gratitude</h1>
+      <div class="rule" aria-hidden="true">✦</div>
+      <div class="photo"><img src="/img/careers-1100.webp" srcset="/img/careers-700.webp 700w, /img/careers-1100.webp 1100w" sizes="(max-width:600px) 86vw, 470px" width="1100" height="825" alt="The Fortune Tax Advisors team smiling together in matching black polos"></div>
+      <div class="msg">
+        <p class="dear">Dear <span id="dearName">Valued Client</span>,</p>
+        <p>As Thanksgiving approaches, all of us at Fortune Tax Advisors want to express our sincere gratitude for your trust and continued support.</p>
+        <p>We are truly thankful to be part of your financial journey. May your holiday be filled with joy, peace, and meaningful moments with family and friends.</p>
+        <p class="closing">From our FTA family to yours, Happy Thanksgiving! 🦃🍂</p>
+      </div>
+      <div class="sign">
+        <small>With gratitude</small>
+        <b>Samara Dean &amp; the FTA family</b>
+        <span>Where Strategy Builds Wealth</span>
+      </div>
+      <div class="foot">
+        <a href="/">myfortunetax.com</a>
+        <a href="tel:+15865005390">(586) 500-5390</a>
+      </div>
+    </article>
+    <button class="again" id="again" type="button">Open it again</button>
+  </section>
+</main>
+<script>
+(function(){
+  /* first name from the link: ?name=Kim  (letters, spaces, hyphens, apostrophes only) */
+  var raw="";try{raw=new URLSearchParams(location.search).get("name")||decodeURIComponent(location.hash.slice(1))||""}catch(e){}
+  var nm=raw.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ' -]/g,"").trim().slice(0,24);
+  if(nm&&!/^\{\{/.test(raw)){nm=nm.charAt(0).toUpperCase()+nm.slice(1);document.getElementById("toName").textContent=nm;document.getElementById("dearName").textContent=nm}
+  /* leaves */
+  var L=document.getElementById("leaves"),cols=["#C9A86A","#EACD91","#00834E","#9C4A26","#A58A5B"];
+  var path='<svg viewBox="0 0 40 40"><path d="M20 2l3 7 6-3-1 7 7 1-5 5 4 4-7 1 1 6-6-3-2 7-2-7-6 3 1-6-7-1 4-4-5-5 7-1-1-7 6 3z" fill="C"/><path d="M20 12v26" stroke="rgba(0,0,0,.25)" stroke-width="1"/></svg>';
+  var n=innerWidth<600?10:16;
+  for(var i=0;i<n;i++){var d=document.createElement("span");d.className="leaf";
+    d.style.cssText="left:"+(Math.random()*100)+"%;--s:"+(18+Math.random()*18)+"px;--d:"+(11+Math.random()*9)+"s;--dl:"+(-Math.random()*18)+"s;--x:"+(Math.random()*160-80)+"px;--r:"+(Math.random()*540-270)+"deg;--o:"+(.45+Math.random()*.4);
+    d.innerHTML=path.replace("C",cols[i%cols.length]);L.appendChild(d)}
+  /* open */
+  var st=document.getElementById("stage"),env=document.getElementById("env"),busy=false;
+  function open(){if(busy)return;busy=true;st.classList.add("opened");
+    setTimeout(function(){st.classList.add("lifted")},650);
+    setTimeout(function(){st.classList.add("revealed");document.getElementById("again").focus({preventScroll:true})},1900)}
+  env.addEventListener("click",open);
+  document.getElementById("again").addEventListener("click",function(){st.classList.remove("revealed","lifted","opened");busy=false;setTimeout(function(){env.focus()},400)});
+})();
+</script>
+</body>
+</html>
