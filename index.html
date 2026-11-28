@@ -140,7 +140,7 @@ html.js .ftx .bento.in .pt{animation:btfly 1.3s var(--ease-b) both;animation-del
 .ftx .cf-btn:disabled{opacity:.35;cursor:default;background:none;color:var(--ink);border-color:var(--gold)}
 .ftx .cf-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .ftx .cf-count{min-width:96px;text-align:center;font:500 22px/1 var(--serif);color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
-.ftx .cf-count span{color:var(--gold-t)}
+.ftx .cf-count span{color:#7A6033}
 @media (max-width:640px){.ftx .cf .card{padding:36px 28px}}
 @media (max-width:900px){.ftx .px-sun{top:46%;right:-20%;width:74vw}.ftx .px-far{height:30%}.ftx .px-near{height:20%}}
 
@@ -332,8 +332,9 @@ html.js .ftx .bento.in .pt{animation:btfly 1.3s var(--ease-b) both;animation-del
       <div class="step rv-in"><b>04</b><h3>Get your refund</h3><p>Fast e-file with direct deposit.</p></div>
     </div>
     <style>
-      .vid-row{display:grid;grid-template-columns:1fr minmax(240px,320px);gap:48px;align-items:center;margin-top:56px;padding-top:48px;border-top:1px solid rgba(234,205,145,.35)}
+      .vid-row{display:grid;grid-template-columns:minmax(0,440px) minmax(240px,320px);justify-content:center;gap:clamp(40px,6vw,96px);align-items:center;margin-top:56px;padding-top:48px;border-top:1px solid rgba(234,205,145,.35)}
       .vid-copy h3{font-size:clamp(28px,3vw,40px);margin:.3em 0 .4em}
+      .vid-copy .eyebrow{white-space:nowrap;letter-spacing:.2em}
       .vid-copy p{max-width:34ch;margin:0 0 1.4em}
       .vid-frame{aspect-ratio:9/16;border-radius:28px;overflow:hidden;border:2px solid #C9A86A;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45)}
       .vid-frame video{display:block;width:100%;height:100%;object-fit:cover}
@@ -341,7 +342,7 @@ html.js .ftx .bento.in .pt{animation:btfly 1.3s var(--ease-b) both;animation-del
     </style>
     <div class="vid-row rv-in">
       <div class="vid-copy"><p class="eyebrow">Get ready for tax season</p><h3>Not sure what to bring?</h3><p>Watch this quick checklist and start your tax folder now, so filing is fast and stress-free.</p><a class="btn btn-gold" href="https://links.myfortunetax.com/widget/booking/nb2GYnfODs4HN8FcD3og" target="_blank" rel="noopener">Start My Return</a></div>
-      <div class="vid-frame"><video controls playsinline preload="none" poster="/img/tax-folder-poster.jpg" width="720" height="1280" aria-label="Start your tax folder: what to gather for tax season"><source src="/video/fta-start-your-tax-folder.mp4" type="video/mp4"></video></div>
+      <div class="vid-frame"><video controls playsinline preload="none" poster="/img/tax-folder-poster.webp" width="720" height="1280" aria-label="Start your tax folder: what to gather for tax season"><source src="/video/fta-start-your-tax-folder.mp4" type="video/mp4"></video></div>
     </div>
   </div>
 </section>
@@ -415,11 +416,11 @@ html.js .ftx .bento.in .pt{animation:btfly 1.3s var(--ease-b) both;animation-del
         <img src="/img/logo-white.webp" alt="Fortune Tax Advisors" width="641" height="168" loading="lazy" decoding="async">
         <p>Virtual tax services, nationwide. Year-round support from real strategists.</p><p style="margin-top:14px;font:500 11.5px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l)">Est. October 2025</p>
       </div>
-      <div><h4>Quick links</h4>
+      <div><h3>Quick links</h3>
         <a href="/services">Services</a><a href="/team">Meet Our Team</a><a href="/remote-filing">Remote Tax Filing</a><a href="/deductions">Tax Deductions Guide</a><a href="/profit-and-loss">Profit &amp; Loss Worksheet</a></div>
-      <div><h4>Careers</h4>
+      <div><h3>Careers</h3>
         <a href="/careers">Join Our Team</a><a href="https://links.myfortunetax.com/widget/form/bKhEQ8iKedM8YpkbjI17" target="_blank" rel="noopener">Apply Now</a><a href="https://checklist.myfortunetax.com">Team Checklist</a></div>
-      <div><h4>Contact</h4>
+      <div><h3>Contact</h3>
         <a href="tel:+15865005390">(586) 500-5390</a><a href="mailto:info@myfortunetax.com">info@myfortunetax.com</a><a href="https://www.instagram.com/fortunetaxadvisors/" target="_blank" rel="noopener">Instagram @fortunetaxadvisors</a><a href="https://links.myfortunetax.com/widget/form/QT9YHqyl4gyLGAWkDCoh" target="_blank" rel="noopener">Tax Season Intake Form</a></div>
     </div>
     <div class="ft-bot"><span>© 2026 Fortune Tax Advisors LLC. All rights reserved.</span><span><a href="/privacy-policy">Privacy Policy</a> · Remote · Nationwide</span></div>
@@ -535,7 +536,7 @@ html.js .ftx .bento.in .pt{animation:btfly 1.3s var(--ease-b) both;animation-del
  <div class="ftp-box">
   <button type="button" class="ftp-x" id="ftp-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   <div class="ftp-side">
-   <img src="/img/logo.webp" alt="Fortune Tax Advisors" width="168" height="44">
+   <img src="/img/logo-360.webp" alt="Fortune Tax Advisors" width="168" height="44">
    <div><span class="ftp-eyebrow">Fortune Tax Advisors</span><h2 id="ftp-title">Keep more of <em>what you earn.</em></h2><p>Leave your details and a Fortune Tax Advisors preparer will reach out to help with your taxes.</p></div>
    <ul class="ftp-points"><li>Every return reviewed before it's filed</li><li>Every credit and deduction you qualify for</li><li>Remote, nationwide, year-round support</li></ul>
   </div>
@@ -717,7 +718,7 @@ html.lenis{scroll-behavior:auto!important}
   var sec=document.querySelector(".ftx .malachite"),svg=sec&&sec.querySelector(".mal-bg");
   if(!svg||!window.XMLSerializer||!window.Blob||!window.URL)return;
   function bake(){
-    var r=sec.getBoundingClientRect(),ar=r.height/Math.max(r.width,1),W=Math.round(Math.min(1600,Math.max(700,r.width))),H=Math.round(Math.min(Math.max(W*ar,500),2800));
+    var r=sec.getBoundingClientRect(),ar=r.height/Math.max(r.width,1),W=Math.round(Math.min(1280,Math.max(700,r.width))),H=Math.round(Math.min(Math.max(W*ar,500),2800));
     var c=svg.cloneNode(true);c.removeAttribute("class");c.setAttribute("xmlns","http://www.w3.org/2000/svg");
     c.setAttribute("width",W);c.setAttribute("height",H);c.setAttribute("viewBox","0 0 "+W+" "+H);c.setAttribute("preserveAspectRatio","none");
     var rc=c.querySelector("rect");rc.setAttribute("width",W);rc.setAttribute("height",H);
@@ -726,7 +727,7 @@ html.lenis{scroll-behavior:auto!important}
     var img=new Image();
     img.onload=function(){
       try{var cv=document.createElement("canvas");cv.width=W;cv.height=H;cv.getContext("2d").drawImage(img,0,0);
-        cv.toBlob(function(b){if(b){use(URL.createObjectURL(b));URL.revokeObjectURL(src)}else use(src)},"image/jpeg",.9)}
+        cv.toBlob(function(b){if(b){use(URL.createObjectURL(b));URL.revokeObjectURL(src)}else use(src)},"image/jpeg",.72)}
       catch(e){use(src)} /* some browsers refuse to export: the SVG image itself still works as a cached background */
     };
     img.onerror=function(){URL.revokeObjectURL(src)}; /* keep the live SVG as the fallback */
@@ -809,5 +810,7 @@ html.lenis{scroll-behavior:auto!important}
   });
 })();
 </script>
+<style id="fta-a11y">.ftx .x-foot h3,.ftx .foot h3{margin:0 0 20px!important;font:500 12px/1 var(--sans)!important;letter-spacing:.28em!important;text-transform:uppercase!important;color:var(--gold-l)!important}
+.ftx .x-ft-bot a,.ftx .ft-bot a{text-decoration:underline;text-underline-offset:3px}</style>
 </body>
 </html>
